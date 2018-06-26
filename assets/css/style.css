@@ -1,0 +1,81 @@
+﻿@font-face {
+    font-family: 'SanFrancisco';
+    
+    src: url('//localhost/vilelabruno.github.io/assets/fonts/SanFranciscoText-Regular.otf') format('truetype');
+font-weight: 300;
+font-style: italic;
+}
+@font-face {
+    font-family: 'SanFranciscoBold';
+    
+    src: url('//localhost/vilelabruno.github.io/assets/fonts/SanFranciscoText-Bold.otf') format('truetype');
+font-weight: 300;
+font-style: italic;
+}
+@font-face {
+    font-family: 'SanFranciscoItalic';
+    
+    src: url('//localhost/vilelabruno.github.io/assets/fonts/SanFranciscoText-LightItalic.otf') format('truetype');
+font-weight: 300;
+font-style: italic;
+}
+@font-face {
+    font-family: 'SanFranciscoLight';
+    
+    src: url('//localhost/vilelabruno.github.io/assets/fonts/SanFranciscoText-Light.otf') format('truetype');
+font-weight: 300;
+font-style: italic;
+}
+body { font-family: 'SanFrancisco';  
+  color: #656565;}
+
+nav{
+  font-size: 18px;
+}
+a{
+  color: #656565;
+}
+a:hover{
+  text-decoration: none;
+  color: #2f2f2f;
+}
+.dirItens{
+  padding-left: 25px;
+}
+.footer-item{
+  padding-left: 25px;
+}
+.space{
+  height: 25px;
+}
+.space2{
+  height: 62px;
+}
+.profile-pic{
+  border-radius: 195px;
+  width: 190px;
+}
+.container-profile-pic{
+  text-align: center;
+}
+.container-name{
+  text-align: center;
+  font-family: 'SanFranciscoBold';
+  font-size: 30px;
+}
+.container-desc{
+  text-align: center;
+  font-family: 'SanFranciscoItalic';
+  font-size: 12px;
+}
+.container-about-me{
+  text-align: center;
+  font-family: 'SanFranciscoLight';
+  font-size: 18px;
+}
+.footer{
+  text-align: center;
+  font-family: 'SanFrancisco';
+  font-size: 18px;
+
+}
