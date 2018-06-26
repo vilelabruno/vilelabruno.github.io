@@ -1,7 +1,7 @@
 ﻿@font-face {
     font-family: 'SanFrancisco';
     
-    src: url('//https://github.com/AppleDesignResources/SanFranciscoFont/blob/master/SanFranciscoText-Regular.otf?raw=true') format('truetype');
+    src: url('//github.com/AppleDesignResources/SanFranciscoFont/blob/master/SanFranciscoText-Regular.otf') format('truetype');
 font-weight: 300;
 font-style: italic;
 }
@@ -26,6 +26,7 @@ font-style: italic;
 font-weight: 300;
 font-style: italic;
 }
+
 body { font-family: 'SanFrancisco';  
   color: #656565;}
 
