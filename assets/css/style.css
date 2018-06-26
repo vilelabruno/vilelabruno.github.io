@@ -1,28 +1,28 @@
 ﻿@font-face {
     font-family: 'SanFrancisco';
     
-    src: url('//localhost/vilelabruno.github.io/assets/fonts/SanFranciscoText-Regular.otf') format('truetype');
+    src: url('//vilelabruno.github.io/assets/fonts/SanFranciscoText-Regular.otf') format('truetype');
 font-weight: 300;
 font-style: italic;
 }
 @font-face {
     font-family: 'SanFranciscoBold';
     
-    src: url('//localhost/vilelabruno.github.io/assets/fonts/SanFranciscoText-Bold.otf') format('truetype');
+    src: url('//vilelabruno.github.io/assets/fonts/SanFranciscoText-Bold.otf') format('truetype');
 font-weight: 300;
 font-style: italic;
 }
 @font-face {
     font-family: 'SanFranciscoItalic';
     
-    src: url('//localhost/vilelabruno.github.io/assets/fonts/SanFranciscoText-LightItalic.otf') format('truetype');
+    src: url('//vilelabruno.github.io/assets/fonts/SanFranciscoText-LightItalic.otf') format('truetype');
 font-weight: 300;
 font-style: italic;
 }
 @font-face {
     font-family: 'SanFranciscoLight';
     
-    src: url('//localhost/vilelabruno.github.io/assets/fonts/SanFranciscoText-Light.otf') format('truetype');
+    src: url('//vilelabruno.github.io/assets/fonts/SanFranciscoText-Light.otf') format('truetype');
 font-weight: 300;
 font-style: italic;
 }
