@@ -1,7 +1,7 @@
 ﻿@font-face {
     font-family: 'SanFrancisco';
     
-    src: url('//vilelabruno.github.io/assets/fonts/SanFranciscoText-Regular.otf') format('truetype');
+    src: url('//https://github.com/AppleDesignResources/SanFranciscoFont/blob/master/SanFranciscoText-Regular.otf?raw=true') format('truetype');
 font-weight: 300;
 font-style: italic;
 }
