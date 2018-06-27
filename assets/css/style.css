@@ -60,3 +60,29 @@ a:hover{
   font-size: 18px;
 
 }
+.center{
+  text-align: center;
+}
+@media only screen and (max-width: 800px) {
+  #clock{
+    display: none;
+  }
+}
+.btn-primary {
+    color: #fff;
+    background-color: #656565;
+    border-color: #656565;
+}
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #656565;
+    border-color: #656565;
+}
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5);
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #656565;
+    border-color: #656565;
+}
