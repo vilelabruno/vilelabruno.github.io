@@ -1,33 +1,8 @@
-﻿@font-face {
-    font-family: 'SanFrancisco';
-    
-    src: url('//github.com/AppleDesignResources/SanFranciscoFont/blob/master/SanFranciscoText-Regular.otf') format('truetype');
-font-weight: 300;
-font-style: italic;
-}
-@font-face {
-    font-family: 'SanFranciscoBold';
-    
-    src: url('//vilelabruno.github.io/assets/fonts/SanFranciscoText-Bold.otf') format('truetype');
-font-weight: 300;
-font-style: italic;
-}
-@font-face {
-    font-family: 'SanFranciscoItalic';
-    
-    src: url('//vilelabruno.github.io/assets/fonts/SanFranciscoText-LightItalic.otf') format('truetype');
-font-weight: 300;
-font-style: italic;
-}
-@font-face {
-    font-family: 'SanFranciscoLight';
-    
-    src: url('//vilelabruno.github.io/assets/fonts/SanFranciscoText-Light.otf') format('truetype');
-font-weight: 300;
-font-style: italic;
-}
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,700');
 
-body { font-family: 'SanFrancisco';  
+body { font-family: 'Roboto';  
+
+  font-weight: 300;
   color: #656565;}
 
 nav{
@@ -61,22 +36,27 @@ a:hover{
 }
 .container-name{
   text-align: center;
-  font-family: 'SanFranciscoBold';
+
+  font-style: bold;
+  font-family: 'Roboto';
   font-size: 30px;
 }
 .container-desc{
   text-align: center;
-  font-family: 'SanFranciscoItalic';
+  font-family: 'Roboto';
   font-size: 12px;
+  font-style: italic;
+  font-weight: 300;
 }
 .container-about-me{
   text-align: center;
-  font-family: 'SanFranciscoLight';
+  font-family: 'Roboto';
   font-size: 18px;
+  font-weight: 300;
 }
 .footer{
   text-align: center;
-  font-family: 'SanFrancisco';
+  font-family: 'Roboto';
   font-size: 18px;
 
 }
