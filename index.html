@@ -31,6 +31,9 @@
 
 <body>
 <style>
+#mobWpp{
+    display: none;
+}
 #langSelector {
   position: fixed;
   top: 0;
@@ -91,11 +94,22 @@ ul {
   z-index:100;
 }
 
+@media only screen and (max-width: 800px) {
+    #mobWpp{
+        display: block;
+    }
+    #pcWpp{
+        display: none;
+    }
+}
 .my-float{
 	margin-top:14px;
 }
 </style>
-<a href="https://web.whatsapp.com/send?phone=5535999144165" class="float" target="_blank">
+<a href="https://web.whatsapp.com/send?phone=5535999144165" id="pcWpp" class="float" target="_blank">
+    <i class="fab fa-whatsapp my-float"></i>
+</a>
+<a href="https://api.whatsapp.com/send?phone=5535999144165" id="mobWpp" class="float" target="_blank">
     <i class="fab fa-whatsapp my-float"></i>
 </a>
 
@@ -157,6 +171,22 @@ ul {
 
     <div class="container-fluid container-name">
         Skills
+        <div class="container">
+            <div class="row" style="font-size: x-large;">
+                <div class="col-sm">
+                  Data Scientist
+                </div>
+                <div class="col-sm">
+                  Developer
+                </div>
+                <div class="col-sm">
+                  Ethical Hacker
+                </div>
+              </div>
+        </div>
+        <div class="container">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum animi voluptatibus sequi sed quasi expedita dolore earum est accusamus minima dolorum repellat, tempora fugit nam provident repudiandae quia corrupti enim.
+        </div>
     </div>
     <div class="space"></div>
     <div class="space"></div>
