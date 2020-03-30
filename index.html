@@ -213,6 +213,7 @@ ul {
     function enClick(){
         $("#currentLangPt").hide();
         $("#currentLangEn").show();
+        changeToEn();
     }
 
     function changeToPt(){
@@ -231,6 +232,24 @@ ul {
             <a href="Maker culture" style="font-style: italic;">maker</a>. 
             Eu amo construir coisas e eu pretendo escrever sobre isso em um blog, no futuro.
             Para finalizar, eu adoro jogar League of Legends, sou platina atualmente.`
+        
+    }
+    function changeToEn(){
+        document.getElementById("resume").innerText = "Resume"
+        document.getElementById("descBruno").innerText = "Developer | Artificial Intelligence Enthusiast"
+        document.getElementById("aboutBruno").innerHTML = `            Hi, how are you? I am fine thanks! About me? Well, I'm a software developer with experience in web and android development. 
+            I'm also a beginner (but in love) 
+            <a href="https://datascience.berkeley.edu/about/what-is-data-science/" style="font-style: italic;">Data Scientist</a>.
+            I love to help people using all that I learn, and my favorite academic areas are health and finance.
+            My main programming languages are Python, Javascript, Java and PHP.
+            <div class="space"></div>
+            <p class="center"> Btw, I use<a href="https://www.reddit.com/r/linuxmasterrace/comments/aa1bfq/why_is_arch_linux_a_meme/" style="font-style: italic;"> arch linux</a>. 😂</p>`
+        document.getElementById("hobbies").innerHTML = `            One of my favorite hobbie is play guitar. 
+            <a href="https://www.instagram.com/stories/highlights/17852755906930345/" style="font-style: italic;">Here</a> 
+            has some moments of me practicing. Other of my hobbies it's be a 
+            <a href="Maker culture" style="font-style: italic;">maker</a>. 
+            I love to build things and I pretend to write about this on a blog, in the future. 
+            For finish, my last hobbie it's play League of Legends, I'm platinum at this time.`
         
     }
 </script>
