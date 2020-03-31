@@ -15,177 +15,211 @@
     <meta property="og:url" content="http://vilelabruno.github.io/" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="Bruno Vilela" />
- 
+
     <!-- Favicon-->
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-<style>
-#mobWpp{
-    display: none;
-}
-#langSelector {
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin: 1em;
-  z-index: 10;
-  font-size: 0.7em;
-}
-.hidden {
-  display: none;
-}
-.dropDownSelector {
-  text-align: left;
-  cursor: default;
-}
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.dropDownSelector>span,
-.dropDownSelector li {
-  padding: 5px 0px 5px 10px;
-}
+    <style>
+        #mobWpp {
+            display: none;
+        }
 
-#dropDownBtn:hover,
-.activeDropDown #dropDownBtn {
-  color: #ffcbc4;
-}
+        #langSelector {
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin: 1em;
+            z-index: 10;
+            font-size: 0.7em;
+        }
 
-.activeDropDown ul {
-  border: 2px solid #ffbbb1;
-  background-color: #fffff0;
-  color: #ffbbb3;
-}
+        .hidden {
+            display: none;
+        }
 
-.dropDownSelector li:hover {
-  color: #fffff0;
-  background-color: #ffa593;
-}
+        .dropDownSelector {
+            text-align: left;
+            cursor: default;
+        }
 
-.dropDownSelector li.selected {
-  background-color: #ffc2b9;
-  color: #fffff0;
-}
-.float{
-	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
-	right:40px;
-	background-color:#6e6e6e;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-  font-size:30px;
-	box-shadow: 2px 2px 3px #999;
-  z-index:100;
-}
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-@media only screen and (max-width: 800px) {
-    #mobWpp{
-        display: block;
-    }
-    #pcWpp{
-        display: none;
-    }
-}
-.my-float{
-	margin-top:14px;
-}
-</style>
-<a href="https://web.whatsapp.com/send?phone=5535999144165" id="pcWpp" class="float" target="_blank">
-    <i class="fab fa-whatsapp my-float"></i>
-</a>
-<a href="https://api.whatsapp.com/send?phone=5535999144165" id="mobWpp" class="float" target="_blank">
-    <i class="fab fa-whatsapp my-float"></i>
-</a>
+        .dropDownSelector>span,
+        .dropDownSelector li {
+            padding: 5px 0px 5px 10px;
+        }
 
-<div id="langSelector" class="dropDownSelector">
-    <span id="currentLangEn">EN</span>
-    <span id="currentLangPt" class="hidden">PT</span>
-    <span id="dropDownBtn" class="fa fa-angle-down"></span>
-    <ul id="dropDownList" class="hidden">
-      <li onclick="enClick()" id="enLang">EN</li>
-      <li onclick="ptClick()" id="ptLand">PT</li>
-    </ul>
-</div>
+        #dropDownBtn:hover,
+        .activeDropDown #dropDownBtn {
+            color: #ffcbc4;
+        }
+
+        .activeDropDown ul {
+            border: 2px solid #ffbbb1;
+            background-color: #fffff0;
+            color: #ffbbb3;
+        }
+
+        .dropDownSelector li:hover {
+            color: #fffff0;
+            background-color: #ffa593;
+        }
+
+        .dropDownSelector li.selected {
+            background-color: #ffc2b9;
+            color: #fffff0;
+        }
+
+        .float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #6e6e6e;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
+        @media only screen and (max-width: 800px) {
+            #mobWpp {
+                display: block;
+            }
+
+            #pcWpp {
+                display: none;
+            }
+        }
+
+        .my-float {
+            margin-top: 14px;
+        }
+    </style>
+    <a target="_blank" href="https://web.whatsapp.com/send?phone=5535999144165" id="pcWpp" class="float" target="_blank">
+        <i class="fab fa-whatsapp my-float"></i>
+    </a>
+    <a target="_blank" href="https://api.whatsapp.com/send?phone=5535999144165" id="mobWpp" class="float" target="_blank">
+        <i class="fab fa-whatsapp my-float"></i>
+    </a>
+
+    <div id="langSelector" class="dropDownSelector">
+        <span id="currentLangEn">EN</span>
+        <span id="currentLangPt" class="hidden">PT</span>
+        <span id="dropDownBtn" class="fa fa-angle-down"></span>
+        <ul id="dropDownList" class="hidden">
+            <li onclick="enClick()" id="enLang">EN</li>
+            <li onclick="ptClick()" id="ptLand">PT</li>
+        </ul>
+    </div>
     <nav class="navbar navbar-light ">
         <div></div>
         <div>
-            <a href="https://vilelabruno.github.io/">Home</a> 
+            <a target="_blank" href="https://vilelabruno.github.io/">Home</a>
             <a class="dirItens" target="_blank" href="portfolio">Portfolio</a>
             <a class="dirItens" id="resume" target="_blank" href="2018_BrunoVilela_resume.pdf">Resume</a>
         </div>
     </nav>
     <div class="container-fluid space2"></div>
-    
+
     <div class="container-fluid container-profile-pic">
         <img class="profile-pic" src="assets/images/profile2.jpg">
     </div>
     <div class="container-fluid space"></div>
-    <div class="container-fluid container-name">  
+    <div class="container-fluid container-name">
         <strong>Bruno Vilela</strong>
     </div>
-    <div class="container-fluid container-desc" id="descBruno">  
+    <div class="container-fluid container-desc" id="descBruno">
         Developer | Artificial Intelligence Enthusiast
     </div>
     <div class="container-fluid space"></div>
     <div class="container-fluid container-about-me">
         <div class="container" id="aboutBruno">
-            Hi, how are you? I am fine thanks! About me? Well, I'm a software developer with experience in web and android development. 
-            I'm also a beginner (but in love) 
-            <a href="https://datascience.berkeley.edu/about/what-is-data-science/" style="font-style: italic;">Data Scientist</a>.
+            Hi, how are you? I am fine thanks! About me? Well, I'm a software developer with experience in web and
+            android development.
+            I'm also a beginner (but in love)
+            <a target="_blank" href="https://datascience.berkeley.edu/about/what-is-data-science/" style="font-style: italic;">Data
+                Scientist</a>.
             I love to help people using all that I learn, and my favorite academic areas are health and finance.
             My main programming languages are Python, Javascript, Java and PHP.
             <div class="space"></div>
-            <p class="center"> Btw, I use<a href="https://www.reddit.com/r/linuxmasterrace/comments/aa1bfq/why_is_arch_linux_a_meme/" style="font-style: italic;"> arch linux</a>. 😂</p>
+            <p class="center"> Btw, I use<a target="_blank"
+                    href="https://www.reddit.com/r/linuxmasterrace/comments/aa1bfq/why_is_arch_linux_a_meme/"
+                    style="font-style: italic;"> arch linux</a>. 😂</p>
         </div>
     </div>
     <div class="space"></div>
-    <div class="container-fluid">
+    <div class="container-fluid container-about-me">
         <div class="container" id="hobbies">
-            One of my favorite hobbie is play guitar. 
-            <a href="https://www.instagram.com/stories/highlights/17852755906930345/" style="font-style: italic;">Here</a> 
-            has some moments of me practicing. Other of my hobbies it's be a 
-            <a href="Maker culture" style="font-style: italic;">maker</a>. 
-            I love to build things and I pretend to write about this on a blog, in the future. 
+            One of my favorite hobbie is play guitar.
+            <a target="_blank" href="https://www.instagram.com/stories/highlights/17852755906930345/"
+                style="font-style: italic;">Here</a>
+            has some moments of me practicing. Other of my hobbies it's be a
+            <a target="_blank" href="Maker culture" style="font-style: italic;">maker</a>.
+            I love to build things and I intend to write about this on a blog, in the future.
             For finish, my last hobbie it's play League of Legends, I'm platinum at this time.
         </div>
     </div>
     <div class="space"></div>
+    <div class="container-fluid container-about-me">
+        <div class="container">
+            My profile and rank on coders rank may be finded <a target="_blank" href="https://profile.codersrank.io/user/vilelabruno"
+                style="font-style: italic;"> here</a>, and I'm also on <a target="_blank" href="buymeacoffee.com">buymeacoffee.com</a>!
+            If you like my work, you can buy me a coffee and share your thoughts.
+        </div>
+    </div>
     <div class="space"></div>
     <div class="space"></div>
 
-    <div class="container-fluid container-name">
+    <div class="container-fluid container-name" style="display: none;">
         Skills
         <div class="container">
-            <div class="row" style="font-size: x-large;">
-                <div class="col-sm">
-                  Data Scientist
+            <div class="row" style="font-size: large;">
+                <div class="col-sm" onclick="showDs()">
+                    <a href="javascript:showDs();"><strong>Data Scientist</strong></a>
                 </div>
-                <div class="col-sm">
-                  Developer
+                <div class="col-sm" onclick="showDev()">
+                    <a href="javascript:showDev();"><strong>Developer</strong></a>
                 </div>
-                <div class="col-sm">
-                  Ethical Hacker
+                <div class="col-sm" onclick="showEh()">
+                    <a href="javascript:showEh();"><strong>Ethical Hacker</strong></a>
                 </div>
-              </div>
+            </div>
         </div>
-        <div class="container">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum animi voluptatibus sequi sed quasi expedita dolore earum est accusamus minima dolorum repellat, tempora fugit nam provident repudiandae quia corrupti enim.
+        <div class="space"></div>
+        <div id="ds" class="container" style="font-size: large;">
+            Lorem ipsum dolor sit ame2t consectetur adipisicing elit. Rerum animi voluptatibus sequi sed quasi expedita
+            dolore earum est accusamus minima dolorum repellat, tempora fugit nam provident repudiandae quia corrupti
+            enim.
+        </div>
+        <div id="dev" class="container" style="font-size: large; display: none;">
+            Lorem ipsum dolor sit amet co312321nsectetur adipisicing elit. Rerum animi voluptatibus sequi sed quasi
+            expedita dolore earum est accusamus minima dolorum repellat, tempora fugit nam provident repudiandae quia
+            corrupti enim.
+        </div>
+        <div id="eh" class="container" style="font-size: large; display: none;">
+            Lorem ipsum dolor sit amet consectfgfdgdfgfetur adipisicing elit. Rerum animi voluptatibus sequi sed quasi
+            expedita dolore earum est accusamus minima dolorum repellat, tempora fugit nam provident repudiandae quia
+            corrupti enim.
         </div>
     </div>
     <div class="space"></div>
@@ -198,23 +232,28 @@ ul {
     </div>
 
     <div class="space"></div>
-    <div class="container">
+    <div class="container container-about-me">
         <div class="row">
 
         </div>
         <div class="space"></div>
 
         <div class="container">
-            <div class="row" style="">
+            <div class="row">
                 <strong>Data Science Game 2018 4th Place </strong>
             </div>
             <div class="row">
-                Data Science Game is a French organization run by volunteers. They aim is to build briges between members of the data science community all around the world. Each year, them organize an international data science competition for students interested in computer
+                Data Science Game is a French organization run by volunteers. They aim is to build briges between
+                members of the data science community all around the world. Each year, them organize an international
+                data science competition for students interested in computer
                 science, engineering, statistics and applied mathematics.
             </div>
+
+            <div class="space"></div>
             <div class="container-fluid footer">
                 <a href="https://youtu.be/gVqpkhqhp-U" target="_blank" class="fab fa-youtube"></a>
-                <a href="https://www.unifal-mg.edu.br/portal/2018/11/20/estudantes-de-ciencia-da-computacao-da-unifal-mg-conquistam-4o-lugar-na-copa-do-mundo-de-ciencia-de-dados-e-quebram-hegemonia-europeia-na-competicao/" target="_blank" class="fas fa-newspaper"></a>
+                <a href="https://www.unifal-mg.edu.br/portal/2018/11/20/estudantes-de-ciencia-da-computacao-da-unifal-mg-conquistam-4o-lugar-na-copa-do-mundo-de-ciencia-de-dados-e-quebram-hegemonia-europeia-na-competicao/"
+                    target="_blank" class="fas fa-newspaper"></a>
             </div>
         </div>
         <div class="space"></div>
@@ -223,8 +262,11 @@ ul {
             <div class="row">
                 <strong> KDD-BR 2018</strong>
             </div>
-            <div class="row">This competition is part of the 2nd KDD-BR (Brazilian Knowledge Discovery in Databases competition) event, one of the joint activities of the 2018 editions of BRACIS, ENIAC, KDMILE, CTDIAC.
+            <div class="row">This competition is part of the 2nd KDD-BR (Brazilian Knowledge Discovery in Databases
+                competition) event, one of the joint activities of the 2018 editions of BRACIS, ENIAC, KDMILE, CTDIAC.
             </div>
+
+            <div class="space"></div>
             <div class="container-fluid footer">
                 <a href="https://www.kaggle.com/c/kddbr-2018/leaderboard" target="_blank" class="fab fa-kaggle"></a>
             </div>
@@ -234,73 +276,119 @@ ul {
         <div class="space2"></div>
         <div class="container-fluid footer">
             <a href="https://www.facebook.com/bruno.vilela00/" target="_blank" class="fab fa-facebook"></a>
-            <a href="https://web.whatsapp.com/send?phone=5535998217355" target="_blank" class="fab fa-whatsapp footer-item"></a>
-            <a href="https://www.linkedin.com/in/vilelabruno00/" target="_blank" class="fab fa-linkedin footer-item"></a>
+            <a href="https://web.whatsapp.com/send?phone=5535998217355" target="_blank"
+                class="fab fa-whatsapp footer-item"></a>
+            <a href="https://www.linkedin.com/in/vilelabruno00/" target="_blank"
+                class="fab fa-linkedin footer-item"></a>
             <a href="https://github.com/vilelabruno" target="_blank" class="fab fa-github footer-item"></a>
             <a href="https://www.kaggle.com/brunov1lela" target="_blank" class="fab fa-kaggle footer-item"></a>
             <a href="https://www.instagram.com/bru.novilela/" target="_blank" class="fab fa-instagram footer-item"></a>
-            <a href="https://open.spotify.com/user/2cucdkknzqpehp3pqj9k6xhvt?si=FIkhCvGTSBOuu0nXpPBASA" target="_blank" class="fab fa-spotify footer-item"></a>
+            <a href="https://open.spotify.com/user/2cucdkknzqpehp3pqj9k6xhvt?si=FIkhCvGTSBOuu0nXpPBASA" target="_blank"
+                class="fab fa-spotify footer-item"></a>
         </div>
         <div class="space2"></div>
 </body>
 <script>
     document.getElementById("langSelector").onclick = selectLang;
-    document.getElementById("ptLang").onclick = ptClick;
-    document.getElementById("enLang").onclick = enClick;
-    function selectLang(){
-        if ($("#dropDownList").is(":visible")){
+
+    function selectLang() {
+        if ($("#dropDownList").is(":visible")) {
             $("#dropDownList").fadeOut();
-        }else{
+        } else {
             $("#dropDownList").fadeIn();
         }
     }
-    function ptClick(){
+
+    function ptClick() {
         $("#currentLangEn").hide();
         $("#currentLangPt").show();
         changeToPt();
     }
 
-    function enClick(){
+    function enClick() {
         $("#currentLangPt").hide();
         $("#currentLangEn").show();
         changeToEn();
     }
 
-    function changeToPt(){
+    function showEh() {
+        if ($("#ds").is(":visible")) {
+            $("#ds").fadeOut(function(){
+                $("#eh").fadeIn();
+            });
+        }else if ($("#dev").is(":visible")) {
+            $("#dev").fadeOut(function(){
+                $("#eh").fadeIn();
+            });
+        }
+
+    }
+
+    function showDev() {
+        if ($("#ds").is(":visible")) {
+            $("#ds").fadeOut(function(){
+                $("#dev").fadeIn();
+            });
+        }else if ($("#eh").is(":visible")) {
+            $("#eh").fadeOut(function(){
+                $("#dev").fadeIn();
+            });
+        }
+
+    }
+
+    function showDs() {
+        if ($("#ds").is(":visible")) {
+            $("#ds").fadeOut(function(){
+                $("#ds").fadeIn();
+            });
+        }else if($("#eh").is(":visible")){
+            $("#eh").fadeOut(function(){
+                $("#ds").fadeIn();
+            });
+        }
+
+    }
+
+    function changeToPt() {
         document.getElementById("resume").innerText = "Currículo"
         document.getElementById("descBruno").innerText = "Desenvolvedor | Entusiasta em Inteligência Artificial"
-        document.getElementById("aboutBruno").innerHTML = `Olá, como vai você? Eu estou ótimo, obrigado! Sobre mim? Bem, eu sou um desenvolvedor Web e Mobile com 4 anos de experiência. 
+        document.getElementById("aboutBruno").innerHTML =
+            `Olá, como vai você? Eu estou ótimo, obrigado! Sobre mim? Bem, eu sou um desenvolvedor Web e Mobile com 4 anos de experiência. 
             Eu também sou um novato (porém apaixonado) 
-            <a href="https://www.cetax.com.br/blog/data-science-ou-ciencia-de-dados/" style="font-style: italic;">Cientista de Dados</a>.
+            <a target="_blank" href="https://www.cetax.com.br/blog/data-science-ou-ciencia-de-dados/" style="font-style: italic;">Cientista de Dados</a>.
             Eu amo ajudar pessoas usando tudo que aprendo, e minhas áreas favoritas academicamente são saúde e mercado financeiro.
             Minhas linguagens de programação principais são Python, JS, Java e PHP.
             <div class="space"></div>
-            <p class="center"> Btw, I use <a href="https://www.reddit.com/r/linuxmasterrace/comments/aa1bfq/why_is_arch_linux_a_meme/" style="font-style: italic;"> arch linux</a>. 😂</p>`
+            <p class="center"> Btw, I use <a target="_blank" href="https://www.reddit.com/r/linuxmasterrace/comments/aa1bfq/why_is_arch_linux_a_meme/" style="font-style: italic;"> arch linux</a>. 😂</p>`
         document.getElementById("hobbies").innerHTML = `Um dos meus hobbies favoritos é tocar violão. 
-            <a href="https://www.instagram.com/stories/highlights/17852755906930345/" style="font-style: italic;">Aqui</a> 
+            <a target="_blank" href="https://www.instagram.com/stories/highlights/17852755906930345/" style="font-style: italic;">Aqui</a> 
             tem alguns momentos comigo praticando. Outro hobbies meu é ser um
-            <a href="Maker culture" style="font-style: italic;">maker</a>. 
+            <a target="_blank" href="Maker culture" style="font-style: italic;">maker</a>. 
             Eu amo construir coisas e eu pretendo escrever sobre isso em um blog, no futuro.
             Para finalizar, eu adoro jogar League of Legends, sou platina atualmente.`
-        
+
     }
-    function changeToEn(){
+
+    function changeToEn() {
         document.getElementById("resume").innerText = "Resume"
         document.getElementById("descBruno").innerText = "Developer | Artificial Intelligence Enthusiast"
-        document.getElementById("aboutBruno").innerHTML = `            Hi, how are you? I am fine thanks! About me? Well, I'm a software developer with experience in web and android development. 
+        document.getElementById("aboutBruno").innerHTML =
+            `            Hi, how are you? I am fine thanks! About me? Well, I'm a software developer with experience in web and android development. 
             I'm also a beginner (but in love) 
-            <a href="https://datascience.berkeley.edu/about/what-is-data-science/" style="font-style: italic;">Data Scientist</a>.
+            <a target="_blank" href="https://datascience.berkeley.edu/about/what-is-data-science/" style="font-style: italic;">Data Scientist</a>.
             I love to help people using all that I learn, and my favorite academic areas are health and finance.
             My main programming languages are Python, Javascript, Java and PHP.
             <div class="space"></div>
-            <p class="center"> Btw, I use<a href="https://www.reddit.com/r/linuxmasterrace/comments/aa1bfq/why_is_arch_linux_a_meme/" style="font-style: italic;"> arch linux</a>. 😂</p>`
+            <p class="center"> Btw, I use<a target="_blank" href="https://www.reddit.com/r/linuxmasterrace/comments/aa1bfq/why_is_arch_linux_a_meme/" style="font-style: italic;"> arch linux</a>. 😂</p>`
         document.getElementById("hobbies").innerHTML = `            One of my favorite hobbie is play guitar. 
-            <a href="https://www.instagram.com/stories/highlights/17852755906930345/" style="font-style: italic;">Here</a> 
+            <a target="_blank" href="https://www.instagram.com/stories/highlights/17852755906930345/" style="font-style: italic;">Here</a> 
             has some moments of me practicing. Other of my hobbies it's be a 
-            <a href="Maker culture" style="font-style: italic;">maker</a>. 
+            <a target="_blank" href="Maker culture" style="font-style: italic;">maker</a>. 
             I love to build things and I pretend to write about this on a blog, in the future. 
             For finish, my last hobbie it's play League of Legends, I'm platinum at this time.`
-        
+
     }
 </script>
+
 </html>
