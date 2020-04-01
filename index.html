@@ -181,7 +181,7 @@
     </div>
     <div class="space"></div>
     <div class="container-fluid container-about-me">
-        <div class="container">
+        <div class="container" id="codeRank">
             My profile and rank on coders rank may be finded <a target="_blank" href="https://profile.codersrank.io/user/vilelabruno"
                 style="font-style: italic;"> here</a>, and I'm also on <a target="_blank" href="buymeacoffee.com">buymeacoffee.com</a>!
             If you like my work, you can buy me a coffee and share your thoughts.
@@ -351,8 +351,8 @@
     }
 
     function changeToPt() {
-        document.getElementById("resume").innerText = "Currículo"
-        document.getElementById("descBruno").innerText = "Desenvolvedor | Entusiasta em Inteligência Artificial"
+        document.getElementById("resume").innerText = "Currículo";
+        document.getElementById("descBruno").innerText = "Desenvolvedor | Entusiasta em Inteligência Artificial";
         document.getElementById("aboutBruno").innerHTML =
             `Olá, como vai você? Eu estou ótimo, obrigado! Sobre mim? Bem, eu sou um desenvolvedor Web e Mobile com 4 anos de experiência. 
             Eu também sou um novato (porém apaixonado) 
@@ -360,19 +360,23 @@
             Eu amo ajudar pessoas usando tudo que aprendo, e minhas áreas favoritas academicamente são saúde e mercado financeiro.
             Minhas linguagens de programação principais são Python, JS, Java e PHP.
             <div class="space"></div>
-            <p class="center"> Btw, I use <a target="_blank" href="https://www.reddit.com/r/linuxmasterrace/comments/aa1bfq/why_is_arch_linux_a_meme/" style="font-style: italic;"> arch linux</a>. 😂</p>`
+            <p class="center"> Btw, I use <a target="_blank" href="https://www.reddit.com/r/linuxmasterrace/comments/aa1bfq/why_is_arch_linux_a_meme/" style="font-style: italic;"> arch linux</a>. 😂</p>`;
         document.getElementById("hobbies").innerHTML = `Um dos meus hobbies favoritos é tocar violão. 
             <a target="_blank" href="https://www.instagram.com/stories/highlights/17852755906930345/" style="font-style: italic;">Aqui</a> 
             tem alguns momentos comigo praticando. Outro hobbies meu é ser um
             <a target="_blank" href="Maker culture" style="font-style: italic;">maker</a>. 
             Eu amo construir coisas e eu pretendo escrever sobre isso em um blog, no futuro.
-            Para finalizar, eu adoro jogar League of Legends, sou platina atualmente.`
+            Para finalizar, eu adoro jogar League of Legends, sou platina atualmente.`;
+
+        document.getElementById("codeRank").innerHTML = `Meu perfil e rank no coders rank pode ser encontrado <a target="_blank" href="https://profile.codersrank.io/user/vilelabruno"
+                style="font-style: italic;"> aqui</a>, e estou também no <a target="_blank" href="buymeacoffee.com">buymeacoffee.com</a>!
+            Se você gostar do meu trabalho, pode me pagar um café :)`;
 
     }
 
     function changeToEn() {
-        document.getElementById("resume").innerText = "Resume"
-        document.getElementById("descBruno").innerText = "Developer | Artificial Intelligence Enthusiast"
+        document.getElementById("resume").innerText = "Resume";
+        document.getElementById("descBruno").innerText = "Developer | Artificial Intelligence Enthusiast";
         document.getElementById("aboutBruno").innerHTML =
             `            Hi, how are you? I am fine thanks! About me? Well, I'm a software developer with experience in web and android development. 
             I'm also a beginner (but in love) 
@@ -380,13 +384,16 @@
             I love to help people using all that I learn, and my favorite academic areas are health and finance.
             My main programming languages are Python, Javascript, Java and PHP.
             <div class="space"></div>
-            <p class="center"> Btw, I use<a target="_blank" href="https://www.reddit.com/r/linuxmasterrace/comments/aa1bfq/why_is_arch_linux_a_meme/" style="font-style: italic;"> arch linux</a>. 😂</p>`
+            <p class="center"> Btw, I use<a target="_blank" href="https://www.reddit.com/r/linuxmasterrace/comments/aa1bfq/why_is_arch_linux_a_meme/" style="font-style: italic;"> arch linux</a>. 😂</p>`;
         document.getElementById("hobbies").innerHTML = `            One of my favorite hobbie is play guitar. 
             <a target="_blank" href="https://www.instagram.com/stories/highlights/17852755906930345/" style="font-style: italic;">Here</a> 
             has some moments of me practicing. Other of my hobbies it's be a 
             <a target="_blank" href="Maker culture" style="font-style: italic;">maker</a>. 
             I love to build things and I pretend to write about this on a blog, in the future. 
-            For finish, my last hobbie it's play League of Legends, I'm platinum at this time.`
+            For finish, my last hobbie it's play League of Legends, I'm platinum at this time.`;
+        document.getElementById("codeRank").innerHTML = `My profile and rank on coders rank may be finded <a target="_blank" href="https://profile.codersrank.io/user/vilelabruno"
+                style="font-style: italic;"> here</a>, and I'm also on <a target="_blank" href="buymeacoffee.com">buymeacoffee.com</a>!
+            If you like my work, you can buy me a coffee and share your thoughts`;
 
     }
 </script>
