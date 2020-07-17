@@ -1,4 +1,23 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,700');
+/* The emerging W3C standard
+   that is currently Firefox-only */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(39, 39, 65) rgb(0, 0, 0);
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(39, 39, 65);
+  border-radius: 20px;
+  border: 3px solid rgb(0, 0, 0);
+}
 
 body { font-family: 'Roboto';  
   background-color: #2c2b2d;
