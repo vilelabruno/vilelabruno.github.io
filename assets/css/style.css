@@ -22,7 +22,7 @@
 body { font-family: 'Roboto';  
   background-color: #2c2b2d;
   font-weight: 300;
-  color: #f5ebff;}
+  color: #faf6ff;}
 
 nav{
   font-size: 18px;
@@ -44,7 +44,7 @@ nav{
   width:72px;
 }
 a{
-  color: #786f90;
+  color: #c1bfc9;
 }
 .skillsA:focus{
   color: #988cb8;
