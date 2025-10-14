@@ -6,1218 +6,362 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Bruno Vilela</title>
-    <meta name="description" content="Bruno Vilela Data Scientist" />
-    <meta name="keywords" content="Bruno Vilela Data Scientist Data Science Dev" />
-    <meta name="theme-color" content="#ebe4de" /> 
-    <!-- Facebook open graph tags -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Bruno Vilela" /> 
-    <meta property="og:url" content="http://vilelabruno.github.io/" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="Bruno Vilela" />
-
-    <!-- Favicon-->
+    <meta name="description" content="Bruno Vilela Quirino - AI Solutions Architect / Principal Data Scientist">
+    <meta name="keywords" content="Bruno Vilela Quirino, AI Solutions Architect, Principal Data Scientist">
+    <meta name="theme-color" content="#0b0d11">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Bruno Vilela">
+    <meta property="og:url" content="http://vilelabruno.github.io/">
+    <meta property="og:title" content="Bruno Vilela Quirino">
+    <meta property="og:description" content="AI Solutions Architect / Principal Data Scientist">
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
-    <style>
-        *{
-            font-family: 'Ubuntu', sans-serif;
-        }
-        #mobWpp {
-            display: none;
-        }
-
-        #langSelector {
-            position: fixed;
-            top: 0;
-            left: 0;
-            margin: 1em;
-            z-index: 10;
-            font-size: 0.7em;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .dropDownSelector {
-            text-align: left;
-            cursor: default;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .dropDownSelector>span,
-        .dropDownSelector li {
-            padding: 5px 0px 5px 10px;
-        }
-
-        #dropDownBtn:hover,
-        .activeDropDown #dropDownBtn {
-            color: #8987fd;
-        }
-
-        .activeDropDown ul {
-            border: 2px solid #9582ff;
-            background-color: #fffff0;
-            color: #8692fc;
-        }
-
-        .dropDownSelector li:hover {
-            color: #fffff0;
-            background-color: #7370ff;
-        }
-
-        .dropDownSelector li.selected {
-            background-color: #b9c9ff;
-            color: #fffff0;
-        }
-
-        .float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #3cff77cb;
-            color: rgb(255, 255, 255);
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            z-index: 100;
-        }
-
-        @media only screen and (max-width: 800px) {
-            #mobWpp {
-                display: block;
-            }
-
-            #pcWpp {
-                display: none;
-            }
-        }
-
-        .my-float {
-            margin-top: 14px;
-        }
-        .bar-main-container {
-            
-          margin: 10px auto;
-          width: 70%;
-          height: 37px;
-          -webkit-border-radius: 4px;
-          -moz-border-radius: 4px;
-          border-radius: 4px;
-          font-family: "Ubuntu", sans-serif;
-          font-weight: normal;
-          font-size: 0.8em;
-          color: #FFF;
-        }
-
-        .wrap { padding: 8px; }
-
-        .bar-percentage {
-          float: left;
-          background: rgba(0,0,0,0.13);
-          -webkit-border-radius: 4px;
-          -moz-border-radius: 4px;
-          border-radius: 4px;
-          padding: 9px 0px;
-          width: 18%;
-          height: 22px;
-        }
-
-        .bar-container {
-          float: right;
-          -webkit-border-radius: 10px;
-          -moz-border-radius: 10px;
-          border-radius: 10px;
-          height: 10px;
-          background: rgba(0,0,0,0.13);
-          width: 100%;
-          margin: 6px 0px;
-          overflow: hidden;
-        }
-        .form{
-            background: rgba(160, 160, 160, 0.13);
-            margin: 0 auto;
-            border-radius: 10px;
-            padding: 40px;
-            margin-bottom: 30px;
-            width: 80%;
-        }
-        .bar {
-          float: left;
-          background: #FFF;
-          height: 100%;
-          -webkit-border-radius: 10px 0px 0px 10px;
-          -moz-border-radius: 10px 0px 0px 10px;
-          border-radius: 10px 0px 0px 10px;
-          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-          filter: alpha(opacity=100);
-          -moz-opacity: 1;
-          -khtml-opacity: 1;
-          opacity: 1;
-        }
-
-        /* COLORS */
-        .azure   { background: rgba(82, 74, 66, 0.13); }
-        .emerald { background: #2CB299; }
-        .violet  { background: #8E5D9F; }
-        .yellow  { background: #EFC32F; }
-        .red     { background: #E44C41; }
-        
-
-    </style>
-    
-    <a target="_blank" href="https://web.whatsapp.com/send?phone=5535999556508" id="pcWpp" class="float" target="_blank">
-        <i class="fab fa-whatsapp my-float"></i>
-    </a>
-    <a target="_blank" href="https://api.whatsapp.com/send?phone=5535999556508" id="mobWpp" class="float" target="_blank">
-        <i class="fab fa-whatsapp my-float"></i>
-    </a>
-
-    <div id="langSelector" class="dropDownSelector">
-        <span id="currentLangEn">EN</span>
-        <span id="currentLangPt" class="hidden">PT</span>
-        <span id="dropDownBtn" class="fa fa-angle-down"></span>
-        <ul id="dropDownList" class="hidden">
-            <li onclick="enClick()" id="enLang">EN</li>
-            <li onclick="ptClick()" id="ptLand">PT</li>
-        </ul>
-    </div>
-    <nav class="navbar navbar-light " style="background-color: #3a3a3a;">
-        <div></div>
-        <div>
-            <a class="menu" href="https://vilelabruno.github.io/">Home</a>
-            <a class="dirItems menu" href="https://vilelabruno.github.io/portfolio.html">Portfolio</a>
-            <a class="dirItems menu" href="https://medium.com/@vilelabruno">Blog</a>
-            <a class="dirItems menu" id="resume" target="_blank" href="2018_BrunoVilela_resume.pdf">Resume</a>
+    <nav class="navbar navbar-expand-lg main-nav">
+        <div class="container">
+            <a class="navbar-brand" href="#">Bruno Vilela</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ml-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://medium.com/@vilelabruno" target="_blank">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://vilelabruno.github.io/portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="btn btn-outline" href="2018_BrunoVilela_resume.pdf" target="_blank">Resume</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
-    <div class="container-fluid space2" style="background-color: #3a3a3a;"></div>
 
-    <div class="container-fluid container-profile-pic" style="background-color: #3a3a3a;">
-        <img class="profile-pic" src="assets/images/profile3.jpg">
-    </div>
-    <div class="container-fluid space" style="background-color: #3a3a3a;"></div>
-    <div class="container-fluid container-name" style="background-color: #3a3a3a;">
-        <strong>Bruno Vilela</strong>
-    </div>
-    <div class="container-fluid container-desc" style="background-color: #3a3a3a; padding: 1%;" id="descBruno">
-        Data Scientist
-    </div>
-    <div class="container-fluid space" ></div>
-    <div class="container-fluid container-about-me">
-        <div class="container" id="aboutBruno">
-            I'm a Data Scientist with extensive experience solving real-world problems using machine learning, deep learning, optimization, and algorithms that work with data. I enjoy solving problems using my knowledge, and my favorite academic fields are artificial intelligence and decision science. My main programming language is Python.
-            <div class="space"></div>
-        </div>
-    </div>
-    <div class="space"></div>
-    <div class="container-fluid container-about-me">
-        <div class="container" id="hobbies">
-            One of my favorite hobbies is playing guitar, and here are some moments of me practicing. Another of my hobbies is being a maker—I love to build things, and I intend to write about this on a blog in the future. I also enjoy cycling and traveling, discovering new places, collecting new experiences, friends, and memories; all of these things make my life better.
-
-        </div>
-    </div>
-    <div class="space"></div>
-    <!--<div class="container-fluid container-about-me">
-        <div class="container" id="codeRank">
-            My profile and rank on coders rank may be find <a target="_blank" href="https://profile.codersrank.io/user/vilelabruno"
-                style="font-style: italic;"> here</a>, and I'm also on <a target="_blank" href="buymeacoffee.com">buymeacoffee.com</a>!
-            If you like my work, you can buy me a coffee and share your thoughts.
-        </div>
-    </div>-->
-    <div class="space"></div>
-    <div class="space"></div>
-
-    <div class="space"></div>
-    <div class="space"></div>
-
-    <div class="container-subsection container-fluid container-name">
-        BLOG
-    </div>
-
-    <div class="space"></div>
-    <div class="container container-about-me">
-        <div class="row">
-
-        </div>
-        <div class="space"></div>
-
-        <div class="container">
-            <div class="row">
-                <a href="https://medium.com/@vilelabruno/identificando-eventos-extremos-com-teste-de-dk-99af22df8c14"><strong>https://medium/vilelabruno/dragonKing</strong></a>
-            </div>
-            <div class="row">
-                Identificando eventos extremos com teste de DragonKing.
-            </div>
-            
-        </div>
-        <div class="space"></div>
-
-        <div class="space"></div>
-
-        <div class="container">
-            <div class="row">
-                <a href="https://medium.com/@vilelabruno/captcha-solver-para-iniciantes-c0501a9b5f8a"><strong>https://medium/vilelabruno/captchaSolver</strong></a>
-            </div>
-            <div class="row">
-                Captcha Solver
-            </div>
-            
-        </div>
-        <div class="space"></div>
-
-        <div class="space"></div>
-
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-    
-    <div class="container-fluid container-name">
-        AWARDS
-    </div>
-
-    <div class="space"></div>
-    <div class="container container-about-me">
-        <div class="row">
-
-        </div>
-        <div class="space"></div>
-
-        <div class="container">
-            <div class="row">
-                <strong>Data Science Game 2018 4th Place </strong>
-            </div>
-            <div class="row">
-                Data Science Game is a French organization run by volunteers. They aim is to build bridges between
-                members of the data science community all around the world. Each year, them organize an international
-                data science competition for students interested in computer
-                science, engineering, statistics and applied mathematics.
-            </div>
-
-            <div class="space"></div>
-            <div class="container-fluid footer">
-                <a href="https://youtu.be/gVqpkhqhp-U" target="_blank" class="fab fa-youtube"></a>
-                <a href="https://www.unifal-mg.edu.br/portal/2018/11/20/estudantes-de-ciencia-da-computacao-da-unifal-mg-conquistam-4o-lugar-na-copa-do-mundo-de-ciencia-de-dados-e-quebram-hegemonia-europeia-na-competicao/"
-                    target="_blank" class="fas fa-newspaper"></a>
-            </div>
-        </div>
-        <div class="space"></div>
-
-        <div class="container">
-            <div class="row">
-                <strong> KDD-BR 2018</strong>
-            </div>
-            <div class="row">This competition is part of the 2nd KDD-BR (Brazilian Knowledge Discovery in Databases
-                competition) event, one of the joint activities of the 2018 editions of BRACIS, ENIAC, KDMILE, CTDIAC.
-            </div>
-
-            <div class="space"></div>
-            <div class="container-fluid footer">
-                <a href="https://www.kaggle.com/c/kddbr-2018/leaderboard" target="_blank" class="fab fa-kaggle"></a>
-            </div>
-        </div>
-        <div class="space"></div>
-
-    </div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-
-    <div class="container-fluid container-name">
-        OPEN SOURCE PROJECTS
-    </div>
-
-    <div class="space"></div>
-    <div class="container container-about-me">
-        <div class="row">
-
-        </div>
-        <div class="space"></div>
-
-        <div class="container">
-            <div class="row">
-                <a href="https://github.com/vilelabruno/getIgId"><strong>https://github.com/vilelabruno/getIgId</strong></a>
-            </div>
-            <div class="row">
-                Simple API to get instagram user id.
-            </div>
-            
-        </div>
-        <div class="space"></div>
-
-        <div class="space"></div>
-
-        <div class="container">
-            <div class="row">
-                <a href="https://github.com/vilelabruno/adventofcode20"><strong>https://github.com/vilelabruno/adventofcode20</strong></a>
-            </div>
-            <div class="row">
-                7 solutions for adventofcode game
-            </div>
-            
-        </div>
-        <div class="space"></div>
-
-        <div class="space"></div>
-
-        <div class="container">
-            <div class="row">
-                <a href="https://github.com/vilelabruno/whatsthis"><strong>https://github.com/vilelabruno/whatsthis</strong></a>
-            </div>
-            <div class="row">
-                Chrome extension to send message on whatsapp to a number.
-            </div>
-            
-        </div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-    
-        <div class="container-fluid container-name">
-            ALGORITHMS
-        </div>
-    
-        <div class="space"></div>
-        <div class="container container-about-me">
-            <div class="row">
-    
-            </div>
-            <div class="space"></div>
-    
+    <main>
+        <header class="hero section">
             <div class="container">
-                <div class="row">
-                    <a href="https://github.com/vilelabruno/MarkowitzPortfolioOPT"><strong>https://github.com/vilelabruno/MarkowitzPortfolioOPT</strong></a>
+                <div class="hero-grid">
+                    <div class="hero-text">
+                        <span class="hero-subtitle" id="descBruno">Senior AI Solutions Architect / Principal Data Scientist</span>
+                        <h1 class="hero-title">Bruno Vilela Quirino</h1>
+                        <p class="hero-summary" id="heroOneLiner">I design and govern enterprise-grade GenAI and ML platforms that power personalization and decisioning at scale. Hands-on with reinforcement learning (contextual bandits, Q-learning), recommendation systems (NBO), and MLOps on Vertex AI, with multi-cloud experience (GCP, Azure, AWS).</p>
+                        <div class="hero-cta">
+                            <a class="btn btn-primary" href="2018_BrunoVilela_resume.pdf" target="_blank">Download resume</a>
+                            <a class="btn btn-outline" href="https://www.linkedin.com/in/vilelabruno00/" target="_blank">Connect on LinkedIn</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="avatar-frame">
+                            <img src="assets/images/profile3.jpg" alt="Bruno Vilela" class="avatar">
+                        </div>
+                        <p class="hero-hobbies" id="hobbies">Guitar, maker projects, cycling, and travel.</p>
+                    </div>
                 </div>
-                <div class="row">
-                    Implementation for markowitz portfolio theory using brazillian shares
-                </div>
-                
             </div>
-            <div class="space"></div>
-    
-            <div class="space"></div>
-    
+        </header>
+
+        <section id="about" class="section">
+            <div class="container container-narrow">
+                <div class="section-header align-left">
+                    <span class="eyebrow">Professional Summary</span>
+                    <h2 class="section-title">Architecting responsible AI platforms</h2>
+                </div>
+                <p id="aboutBruno" class="section-summary">I'm a senior AI solutions architect focused on building and governing GenAI/ML platforms for aviation and adjacent domains. My work combines advanced modeling and reinforcement learning with architecture governance, integration blueprints, privacy-by-design, and reliable MLOps. I partner with engineering and product to translate strategy into scalable systems, ensuring experimentation discipline (A/B testing, DoE), observability, and measurable business impact.</p>
+            </div>
+        </section>
+
+        <section id="featured" class="section section-surface">
             <div class="container">
-                <div class="row">
-                    <a href="https://github.com/vilelabruno/morepizza_hashcode"><strong>https://github.com/vilelabruno/morepizza_hashcode</strong></a>
+                <div class="section-header">
+                    <span class="eyebrow">Featured Work</span>
+                    <h2 class="section-title">Impact highlights</h2>
                 </div>
-                <div class="row">
-                    More pizza 2020 HashCode problem
+                <div class="card-grid">
+                    <article class="feature-card">
+                        <h3>GenAI-powered NBO on Vertex AI</h3>
+                        <p>Owned the integration patterns, security controls, and MLOps review gates. Led PoCs-to-production for RAG and vector search components enabling real-time recommendations.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>RL for Personalization</h3>
+                        <p>Delivered contextual bandits and Q-learning services via APIs, establishing real-time feature pipelines and experimentation frameworks.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>Architecture Governance</h3>
+                        <p>Defined standards, review gates, and cost/performance trade-offs aligned with well-architected principles covering reliability, security, cost, performance, and operations.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>Cross-Functional Delivery</h3>
+                        <p>Partnered with engineering, product, and commercial teams to link platform capabilities to customer experience and revenue outcomes.</p>
+                    </article>
                 </div>
-                
             </div>
-            <div class="space"></div>
-    
-            <div class="space"></div>
-    
+        </section>
+
+        <section id="experience" class="section">
             <div class="container">
-                <div class="row">
-                    <a href="https://github.com/vilelabruno/hashcodeDataCenterOptmization"><strong>https://github.com/vilelabruno/hashcodeDataCenterOptimization</strong></a>
+                <div class="section-header">
+                    <span class="eyebrow">Selected Experience</span>
+                    <h2 class="section-title">Building AI platforms end-to-end</h2>
                 </div>
-                <div class="row">
-                    HashCode DataCenter Optimization problem
+                <div class="timeline">
+                    <article class="timeline-card">
+                        <header>
+                            <h3>LATAM Airlines</h3>
+                            <span class="role">Senior Data Scientist / AI Solutions Architect</span>
+                        </header>
+                        <ul>
+                            <li>Owned GenAI/NBO platform architecture on GCP Vertex AI; acted as design authority across squads.</li>
+                            <li>Built uplift modeling pipelines powering ancillary upsell and lifecycle marketing triggers.</li>
+                            <li>Designed and deployed multi-armed bandit services for experimentation and journey orchestration.</li>
+                            <li>Delivered product recommendation engines (collaborative filtering, content-based) integrated with personalization APIs.</li>
+                            <li>Developed customer lifetime value segmentation and monitoring dashboards linked to commercial planning.</li>
+                            <li>Led architecture reviews, privacy controls, and MLOps standards (CI/CD, registry, monitoring) to reduce time-to-production risk.</li>
+                        </ul>
+                    </article>
+                    <article class="timeline-card">
+                        <header>
+                            <h3>Kumulus</h3>
+                            <span class="role">Senior Data Scientist</span>
+                        </header>
+                        <ul>
+                            <li>Delivered GenAI/NLP and document understanding solutions plus demand forecasting and computer vision projects.</li>
+                            <li>Orchestrated Databricks/Spark ETLs with Azure/AWS integrations, leveraging LangChain and retrieval workflows.</li>
+                        </ul>
+                    </article>
+                    <article class="timeline-card">
+                        <header>
+                            <h3>Plusoft</h3>
+                            <span class="role">Data Scientist</span>
+                        </header>
+                        <ul>
+                            <li>Executed large-scale segmentation (LTV, churn tendencies), geomarketing, and time-series models.</li>
+                            <li>Implemented PySpark pipelines for data quality, modeling, dashboards, and API integrations.</li>
+                        </ul>
+                    </article>
+                    <article class="timeline-card">
+                        <header>
+                            <h3>Vertem</h3>
+                            <span class="role">Data Scientist</span>
+                        </header>
+                        <ul>
+                            <li>Developed anti-fraud risk modeling, segmentation, and CLV initiatives with Azure/MLflow MLOps.</li>
+                            <li>Drove stakeholder storytelling and model monitoring practices.</li>
+                        </ul>
+                    </article>
+                    <article class="timeline-card">
+                        <header>
+                            <h3>Earlier Full-Stack Engineering (Intern/Junior)</h3>
+                        </header>
+                        <ul>
+                            <li>Built full-stack web apps using PHP (Laravel/CodeIgniter), MVC, JavaScript/jQuery, HTML/CSS/Bootstrap.</li>
+                            <li>Delivered REST APIs, Docker setups, and foundational CI/CD for modular microservices.</li>
+                        </ul>
+                    </article>
                 </div>
-                
             </div>
-            <div class="space"></div>
-    
-            <div class="space"></div>
-    
+        </section>
+
+        <section id="skills" class="section section-surface">
             <div class="container">
-                <div class="row">
-                    <a href="https://github.com/vilelabruno/DMC20"><strong>https://github.com/vilelabruno/DMC20</strong></a>
+                <div class="section-header">
+                    <span class="eyebrow">Skills</span>
+                    <h2 class="section-title">Architectural and scientific toolkit</h2>
                 </div>
-                <div class="row">
-                    Data Mining Cup 2020 solution
+                <div class="skills-grid">
+                    <article class="skill-card">
+                        <h3>Platforms &amp; Governance</h3>
+                        <ul>
+                            <li>Cloud &amp; Platforms: GCP Vertex AI; Azure (Data/AI); AWS</li>
+                            <li>Architecture &amp; Governance: Microservices; Event-Driven; API-First; Architecture Reviews; Well-Architected; Privacy-by-Design; C4/UML</li>
+                        </ul>
+                    </article>
+                    <article class="skill-card">
+                        <h3>Data &amp; MLOps</h3>
+                        <ul>
+                            <li>Data &amp; AI: Reinforcement Learning (contextual bandits, Q-learning); Recommenders (NBO); RAG/Embeddings; Vector DB; Feature Stores; Observability</li>
+                            <li>MLOps &amp; DevSecOps: CI/CD for ML; Model Registry; Lineage; Monitoring &amp; Drift; IaC</li>
+                        </ul>
+                    </article>
+                    <article class="skill-card">
+                        <h3>Integration &amp; Analytics</h3>
+                        <ul>
+                            <li>Web &amp; Integration: REST APIs; PHP (Laravel/CodeIgniter), MVC; JavaScript/jQuery; HTML/CSS/Bootstrap; Docker</li>
+                            <li>Analytics: Causal inference; A/B testing &amp; DoE; Time series; Clustering; Interpretable linear/logistic models</li>
+                        </ul>
+                    </article>
                 </div>
-                
             </div>
-            <div class="space"></div>
+        </section>
 
+        <section id="recognition" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="eyebrow">Recognition</span>
+                    <h2 class="section-title">Awards &amp; Certifications</h2>
+                </div>
+                <div class="recognition-grid">
+                    <div class="recognition-column">
+                        <h3>Awards</h3>
+                        <ul class="plain-list">
+                            <li>Data Science Game 2018 - 4th place</li>
+                            <li>Data Mining Cup 2022 - 4th place</li>
+                            <li>ITA - LATAM Data Science Challenge 2023</li>
+                            <li>KDD-BR 2018 (Brazilian KDD competition)</li>
+                        </ul>
+                    </div>
+                    <div class="recognition-column">
+                        <h3>Certifications</h3>
+                        <ul class="plain-list">
+                            <li>Azure Fundamentals; Azure AI-900</li>
+                            <li>Oracle AI</li>
+                            <li>Databricks Data Scientist</li>
+                            <li>GCP Vertex AI</li>
+                            <li>AWS SageMaker</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section id="projects" class="section section-surface">
+            <div class="container">
+                <div class="section-header">
+                    <span class="eyebrow">Projects</span>
+                    <h2 class="section-title">Open source &amp; research</h2>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <header class="project-header">
+                            <h3>COSMIC - Python package for magnetic turbulence analysis</h3>
+                            <a class="project-link" href="https://github.com/vilelabruno/COSMIC" target="_blank" rel="noopener">Repository</a>
+                        </header>
+                        <p>A reusable library inspired by ESA Cluster mission data. Originated from an undergraduate thesis and now released as a tested, reusable package with a clear API for professional portfolios.</p>
+                        <details class="project-details">
+                            <summary>Key features</summary>
+                            <ul>
+                                <li>Ingestion and preprocessing for .dat and CEF files, consolidating the logic from original notebooks.</li>
+                                <li>Current density and gradients via the curlometer method.</li>
+                                <li>Turbulence metrics: PVI, magnetic volatility, Gaussian-kernel smoothing.</li>
+                                <li>Robust time-series cleaning and normalization: outlier detection, magnetic energy, and one-line resampling utilities.</li>
+                                <li>Spectral diagnostics: total/parallel/perpendicular PSD, temporal and spatial correlations, high-order structure functions.</li>
+                                <li>MVA, multi-point timing analysis, field-line curvature estimation, helicity, tetrahedron quality factors.</li>
+                                <li>Extreme value analysis tools: POT, declustering, and associated visualizations.</li>
+                                <li>Automated tests with pytest for reproducible results.</li>
+                                <li>Patent held by the author.</li>
+                            </ul>
+                        </details>
+                    </article>
+                    <article class="project-card">
+                        <header class="project-header">
+                            <h3>MarkowitzPortfolioOPT</h3>
+                            <a class="project-link" href="https://github.com/vilelabruno/MarkowitzPortfolioOPT" target="_blank" rel="noopener">Repository</a>
+                        </header>
+                        <p>Production-oriented implementation and backtesting utilities for portfolio optimization with Brazilian equities.</p>
+                    </article>
+                    <article class="project-card">
+                        <header class="project-header">
+                            <h3>DMC20</h3>
+                            <a class="project-link" href="https://github.com/vilelabruno/DMC20" target="_blank" rel="noopener">Repository</a>
+                        </header>
+                        <p>Data Mining Cup solution pipeline; documented approach and experiments.</p>
+                    </article>
+                    <article class="project-card">
+                        <header class="project-header">
+                            <h3>whatsthis</h3>
+                            <a class="project-link" href="https://github.com/vilelabruno/whatsthis" target="_blank" rel="noopener">Repository</a>
+                        </header>
+                        <p>Chrome extension to fetch WhatsApp messages by number.</p>
+                    </article>
+                    <article class="project-card">
+                        <header class="project-header">
+                            <h3>getIgId</h3>
+                            <a class="project-link" href="https://github.com/vilelabruno/getIgId" target="_blank" rel="noopener">Repository</a>
+                        </header>
+                        <p>Minimal API to retrieve Instagram user IDs.</p>
+                    </article>
+                    <article class="project-card">
+                        <header class="project-header">
+                            <h3>HashCode problems</h3>
+                        </header>
+                        <p>Documented solutions with complexity notes and heuristic strategies.</p>
+                        <p>Selected repositories: <a href="https://github.com/vilelabruno/morepizza_hashcode" target="_blank" rel="noopener">morepizza_hashcode</a>, <a href="https://github.com/vilelabruno/hashcodeDataCenterOptimization" target="_blank" rel="noopener">hashcodeDataCenterOptimization</a>, <a href="https://github.com/vilelabruno/adventofcode20" target="_blank" rel="noopener">adventofcode20</a>.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="eyebrow">Blog</span>
+                    <h2 class="section-title">Recent writing</h2>
+                </div>
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <h3><a href="https://medium.com/@vilelabruno/identificando-eventos-extremos-com-teste-de-dk-99af22df8c14" target="_blank" rel="noopener">Identifying Extreme Events with the Dragon-King Test</a></h3>
+                        <p>A practical walkthrough on detecting heavy-tail anomalies; statistical assumptions, implementation notes, operational caveats, and visualization tips.</p>
+                    </article>
+                    <article class="blog-card">
+                        <h3><a href="https://medium.com/@vilelabruno/captcha-solver-para-iniciantes-c0501a9b5f8a" target="_blank" rel="noopener">Captcha Solver</a></h3>
+                        <p>End-to-end pipeline for CAPTCHA solving: data collection, augmentation, model training, evaluation trade-offs (accuracy vs. latency), and deployment considerations.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section section-surface">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="section-header align-left">
+                            <span class="eyebrow">Contact</span>
+                            <h2 class="section-title">Let's collaborate</h2>
+                        </div>
+                        <p class="contact-text">For speaking, collaboration, or advisory requests, please reach out via the form or connect on LinkedIn. I'm open to high-impact projects in GenAI platforms, personalization, and architecture governance.</p>
+                        <div class="social-list">
+                            <a href="https://medium.com/@vilelabruno/" target="_blank" class="fab fa-medium" aria-label="Medium"></a>
+                            <a href="https://web.whatsapp.com/send?phone=5535999556508" target="_blank" class="fab fa-whatsapp" aria-label="WhatsApp"></a>
+                            <a href="https://www.linkedin.com/in/vilelabruno00/" target="_blank" class="fab fa-linkedin" aria-label="LinkedIn"></a>
+                            <a href="https://github.com/vilelabruno" target="_blank" class="fab fa-github" aria-label="GitHub"></a>
+                            <a href="https://www.kaggle.com/brunov1lela" target="_blank" class="fab fa-kaggle" aria-label="Kaggle"></a>
+                            <a href="https://www.instagram.com/data.vilela/" target="_blank" class="fab fa-instagram" aria-label="Instagram"></a>
+                            <a href="https://open.spotify.com/user/2cucdkknzqpehp3pqj9k6xhvt?si=FIkhCvGTSBOuu0nXpPBASA" target="_blank" class="fab fa-spotify" aria-label="Spotify"></a>
+                        </div>
+                    </div>
+                    <form method="post" class="contact-form" action="https://forms.un-static.com/forms/cf74ae2aa19a016ecb4df51242bf27c1ec69c742">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input id="name" name="name" placeholder="Please enter your name" type="text" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail address</label>
+                            <input id="email" name="email" placeholder="Your e-mail address" type="email" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required class="form-control"></textarea>
+                        </div>
+                        <button name="submit" type="submit" class="btn btn-primary">Send</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; BRUNO VILELA 2019 - ALL RIGHTS RESERVED.</p>
         </div>
-    </div>
-    <div class="container-fluid container-name">
-        SKILLS
+    </footer>
 
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="container">
-            <div class="row" style="font-size: large;">
-                <div class="col-sm" onclick="showDs()">
-                    <a class="skillsA" href="javascript:showDs();"><strong>DECISION SCIENCE</strong></a>
-                </div>
-                <div class="col-sm" onclick="showDev()">
-                    <a class="skillsA" href="javascript:showDev();"><strong>DEVELOPER</strong></a>
-                </div>
-                <div class="col-sm" onclick="showAn()">
-                    <a class="skillsA" href="javascript:showAn();"><strong>ANALYSIS/DATA ENGINEERING</strong></a>
-                </div>
-            </div>
-        </div>
-        <div class="space"></div>
-        <div class="container" id="ds" style="font-size: small; display: none;">
-
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Relational Algebra (SQL)</div>
-                <div class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="88"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Classification</div>
-                <div id="ds" class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="88"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Genetic Algorithm</div>
-                <div id="ds" class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="81"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Heuristic</div>
-                <div id="ds" class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="82"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Graph Theory</div>
-                <div id="ds" class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="84"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Regression</div>
-                <div id="ds" class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="65"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">GB</div>
-                <div id="ds" class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="50"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">LSTM</div>
-                <div id="ds" class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="43"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">RNN</div>
-                <div id="ds" class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="38"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">CNN</div>
-                <div id="ds" class="container-bar" style="width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="31"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Linear Models</div>
-                <div id="ds" class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="71"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Quadratic Models</div>
-                <div id="ds" class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="61"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">SEO</div>
-                <div class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="80"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Facebook ADS</div>
-                <div class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="65"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Google ADS</div>
-                <div class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="50"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Multivariable Calculus & Linear Algebra</div>
-                <div id="ds" class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="71"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Data Tracking</div>
-                <div class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="59"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Time Series Models</div>
-                <div id="ds" class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="78"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="dev" class="container" style="font-size: small; display: none;">
-             
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">NoSQL</div>
-                <div class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="70"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>   
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">NodeJS</div>
-                <div class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="70"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Scrum</div>
-                <div class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="38"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>            
-
-
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Bootstrap</div>
-                <div class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="90"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Laravel</div>
-                <div class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="89"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Code Igniter</div>
-                <div class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="97"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">WordPress</div>
-                <div class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="60"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Django</div>
-                <div class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="30"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>            
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Design Partners</div>
-                <div class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="12"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">GitHub</div>
-                <div class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="38"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Docker</div>
-                <div class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="38"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="an" class="container" style="font-size: small; display: none;">
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">EDA</div>
-                <div class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="38"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">A/B testing</div>
-                <div class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="88"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Scrapping</div>
-                <div id="ds" class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="99"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Data Mining</div>
-                <div id="ds" class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="87"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Statistics</div>
-                <div id="ds" class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="83"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Data Wrangling</div>
-                <div id="ds" class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="95"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div style="width: 10%; margin-top: 2%;">Storytelling</div>
-                <div id="ds" class="container-bar" style="font-size: large; width: 90%;">
-
-                    <div id="bar-1" class="bar-main-container azure">
-                        <div class="wrap">
-                          <div class="bar-percentage" style="display: none;" data-percentage="95"></div>
-                          <div class="bar-container">
-                            <div class="bar"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="space"></div>
-    
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <form method="post" class="form" action="https://forms.un-static.com/forms/cf74ae2aa19a016ecb4df51242bf27c1ec69c742">
-        <div class="form-group row">
-          <label for="name" class="col-4 col-form-label">Name</label>
-          <div class="col-8">
-            <div class="input-group">
-              <input id="name" name="name" placeholder="Please enter your name" type="text" required="required" class="form-control">
-            </div>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="email" class="col-4 col-form-label">E-mail address</label>
-          <div class="col-8">
-            <div class="input-group">
-              <input id="email" name="email" placeholder="Your e-mail address" type="text" required="required" class="form-control">
-            </div>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="message" class="col-4 col-form-label">Message</label>
-          <div class="col-8">
-            <textarea id="message" name="message" cols="40" rows="10" required="required" class="form-control"></textarea>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="offset-4 col-8">
-            <button name="submit" type="submit" class="btn btn-primary">Send</button>
-          </div>
-        </div>
-      </form>
-<!--
-    <div class="space"></div>
-    
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-
-    <div class="container-fluid container-name">
-        Volunteer work
-    </div>-->
-    <div  style="background-color: #3a3a3a;">
-
-        <div class="space2"></div>
-        <div class="container-fluid footer">
-            <a href="https://medium.com/@vilelabruno/" target="_blank" class="fab fa-medium"></a>
-            <a href="https://web.whatsapp.com/send?phone=5535999556508" target="_blank"
-                class="fab fa-whatsapp footer-item"></a>
-            <a href="https://www.linkedin.com/in/vilelabruno00/" target="_blank"
-                class="fab fa-linkedin footer-item"></a>
-            <a href="https://github.com/vilelabruno" target="_blank" class="fab fa-github footer-item"></a>
-            <a href="https://www.kaggle.com/brunov1lela" target="_blank" class="fab fa-kaggle footer-item"></a>
-            <a href="https://www.instagram.com/data.vilela/" target="_blank" class="fab fa-instagram footer-item"></a>
-            <a href="https://open.spotify.com/user/2cucdkknzqpehp3pqj9k6xhvt?si=FIkhCvGTSBOuu0nXpPBASA" target="_blank"
-                class="fab fa-spotify footer-item"></a>
-        </div>
-        <div class="space2"></div>
-        <div style="text-align: center; width: 100%;">© BRUNO VILELA 2019 - TODOS OS DIREITOS RESERVADOS.</div>
-        <div class="space2"></div>
-    </div>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
-<script>
-    $("#ds").fadeIn();
-    animateBar();
-    // todo: only allow animation when the page has in pixel of the div that contains the animation
-    function animateBar(){    
-        $('.bar-percentage[data-percentage]').each(function () {
-            var progress = $(this);
-            var percentage = Math.ceil($(this).attr('data-percentage'));
-            $({countNum: 0}).animate({countNum: percentage}, {
-                duration: 2000,
-                easing:'swing',
-                step: function() {
-                  // What todo on every count
-                    var pct = '';
-                    if(percentage == 0){
-                      pct = Math.floor(this.countNum) + '%';
-                    }else{
-                      pct = Math.floor(this.countNum+1) + '%';
-                    }
-                    progress.text(pct) && progress.siblings().children().css('width',pct);
-                    document.getElementById("langSelector").onclick = selectLang;
-                }
-            });
-        });
-    }
-    function selectLang() {
-        if ($("#dropDownList").is(":visible")) {
-            $("#dropDownList").fadeOut();
-        } else {
-            $("#dropDownList").fadeIn();
-        }
-    }
-
-    function ptClick() {
-        $("#currentLangEn").hide();
-        $("#currentLangPt").show();
-        changeToPt();
-    }
-
-    function enClick() {
-        $("#currentLangPt").hide();
-        $("#currentLangEn").show();
-        changeToEn();
-    }
-
-    function showAn() {
-        if ($("#ds").is(":visible")) {
-            $("#ds").fadeOut(function(){
-                $("#an").fadeIn();
-            });
-        }else if ($("#dev").is(":visible")) {
-            $("#dev").fadeOut(function(){
-                $("#an").fadeIn();
-            });
-        }else if ($("#cm").is(":visible")) {
-            $("#cm").fadeOut(function(){
-                $("#an").fadeIn();
-            });
-        }
-        animateBar();
-    }
-    function showCm() {
-        if ($("#ds").is(":visible")) {
-            $("#ds").fadeOut(function(){
-                $("#cm").fadeIn();
-            });
-        }else if ($("#dev").is(":visible")) {
-            $("#dev").fadeOut(function(){
-                $("#cm").fadeIn();
-            });
-        }else if ($("#an").is(":visible")) {
-            $("#an").fadeOut(function(){
-                $("#cm").fadeIn();
-            });
-        }
-        animateBar();
-    }
-
-    function showDev() {
-        if ($("#ds").is(":visible")) {
-            $("#ds").fadeOut(function(){
-                $("#dev").fadeIn();
-            });
-        }else if ($("#cm").is(":visible")) {
-            $("#cm").fadeOut(function(){
-                $("#dev").fadeIn();
-            });
-        }else if ($("#an").is(":visible")) {
-            $("#an").fadeOut(function(){
-                $("#dev").fadeIn();
-            });
-        }
-        animateBar();
-    }
-    function showDs() {
-        if ($("#dev").is(":visible")) {
-            $("#dev").fadeOut(function(){
-                $("#ds").fadeIn();
-            });
-        }else if($("#cm").is(":visible")){
-            $("#cm").fadeOut(function(){
-                $("#ds").fadeIn();
-            });
-        }else if ($("#an").is(":visible")) {
-            $("#an").fadeOut(function(){
-                $("#ds").fadeIn();
-            });
-        }
-        animateBar();
-    }
-
-    function changeToPt() {
-        document.getElementById("resume").innerText = "Currículo";
-        document.getElementById("descBruno").innerText = "Desenvolvedor | Entusiasta em Inteligência Artificial";
-        document.getElementById("aboutBruno").innerHTML =
-            `Olá, como vai você? Eu estou ótimo, obrigado! Sobre mim? Bem, eu sou um desenvolvedor Web e Mobile com 4 anos de experiência. 
-            Eu também sou um novato (porém apaixonado) 
-            <a target="_blank" href="https://www.cetax.com.br/blog/data-science-ou-ciencia-de-dados/" style="font-style: italic;">Cientista de Dados</a>.
-            Eu amo ajudar pessoas usando tudo que aprendo, e minhas áreas favoritas academicamente são inteligência artificial e decision science.
-            Minhas linguagens de programação principais são Python, JS, Java e PHP.
-            <div class="space"></div>
-            <p class="center"> Btw, I use <a target="_blank" href="https://www.reddit.com/r/linuxmasterrace/comments/aa1bfq/why_is_arch_linux_a_meme/" style="font-style: italic;"> arch linux</a>. 😂</p>`;
-        document.getElementById("hobbies").innerHTML = `Um dos meus hobbies favoritos é tocar violão. 
-            <a target="_blank" href="https://www.instagram.com/stories/highlights/17852755906930345/" style="font-style: italic;">Aqui</a> 
-            tem alguns momentos comigo praticando. Outro hobbies meu é ser um
-            <a target="_blank" href="Maker culture" style="font-style: italic;">maker</a>. 
-            Eu amo construir coisas e eu pretendo escrever sobre isso em um blog, no futuro.
-            Para finalizar, eu adoro jogar League of Legends, sou platina atualmente.`;
-
-        document.getElementById("codeRank").innerHTML = `Meu perfil e rank no coders rank pode ser encontrado <a target="_blank" href="https://profile.codersrank.io/user/vilelabruno"
-                style="font-style: italic;"> aqui</a>, e estou também no <a target="_blank" href="buymeacoffee.com">buymeacoffee.com</a>!
-            Se você gostar do meu trabalho, pode me pagar um café :)`;
-
-    }
-
-    function changeToEn() {
-        document.getElementById("resume").innerText = "Resume";
-        document.getElementById("descBruno").innerText = "Developer | Artificial Intelligence Enthusiast";
-        document.getElementById("aboutBruno").innerHTML =
-            `            Hi, how are you? I am fine thanks! About me? Well, I'm a software developer with experience in web and android development. 
-            I'm also a <a target="_blank" href="https://datascience.berkeley.edu/about/what-is-data-science/" style="font-style: italic;">Data Scientist</a>.
-            I love to help people using all that I learn, and my favorite academic areas are decision science and artificial intelligence.
-            My main programming languages are Python, Javascript, Java and PHP.
-            <div class="space"></div>
-            <p class="center"> Btw, I use<a target="_blank" href="https://www.reddit.com/r/linuxmasterrace/comments/aa1bfq/why_is_arch_linux_a_meme/" style="font-style: italic;"> arch linux</a>. 😂</p>`;
-        document.getElementById("hobbies").innerHTML = `            One of my favorite hobby is play guitar. 
-            <a target="_blank" href="https://www.instagram.com/stories/highlights/17852755906930345/" style="font-style: italic;">Here</a> 
-            has some moments of me practicing. Other of my hobbies it's be a 
-            <a target="_blank" href="Maker culture" style="font-style: italic;">maker</a>. 
-            I love to build things and I pretend to write about this on a blog, in the future. 
-            For finish, my last hobby it's play League of Legends, I'm platinum at this time.`;
-        document.getElementById("codeRank").innerHTML = `My profile and rank on coders rank is <a target="_blank" href="https://profile.codersrank.io/user/vilelabruno"
-                style="font-style: italic;"> here</a>, and I'm also on <a target="_blank" href="buymeacoffee.com">buymeacoffee.com</a>!
-            If you like my work, you can buy me a coffee and share your thoughts`;
-
-    }
-</script>
 
 </html>
