@@ -347,17 +347,19 @@ header.hero {
 
 .plain-list li {
   position: relative;
-  padding-left: 1.4rem;
+  padding-left: 1.6rem;
   margin-bottom: 0.55rem;
 }
 
 .plain-list li::before {
-  content: '\\2022';
+  content: '';
   position: absolute;
   left: 0;
-  top: 0.15rem;
-  color: var(--accent);
-  font-size: 0.7rem;
+  top: 0.55rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--accent);
 }
 
 .projects-grid {
@@ -397,7 +399,7 @@ header.hero {
 }
 
 .project-details summary::after {
-  content: '\\203A';
+  content: '>';
   position: absolute;
   right: 0;
   top: 0;
