@@ -81,12 +81,23 @@
         </header>
 
         <section id="about" class="section">
-            <div class="container container-narrow">
-                <div class="section-header align-left">
-                    <span class="eyebrow">About</span>
-                    <h2 class="section-title">From engineering to decision science</h2>
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <div class="section-header align-left">
+                            <span class="eyebrow">About</span>
+                            <h2 class="section-title">From engineering to decision science</h2>
+                        </div>
+                        <p id="aboutBruno" class="section-summary">I started as a software engineer, moved into data science, and have spent the last few years narrowing in on the layer where statistics turns into action: causal inference, contextual bandits, and policy learning. Most of my day-to-day is building and operating decision systems in production — pricing, personalization, marketing — but I treat that work as a source of research questions, not just delivery. Competitions, an undergraduate thesis in space-plasma physics, and problems from work have each, in turn, become a methods question worth writing up properly.</p>
+                    </div>
+                    <div class="about-visual">
+                        <div class="qlearning-visual">
+                            <canvas id="qlearningCanvas" aria-hidden="true"></canvas>
+                        </div>
+                        <p class="qlearning-caption-text">A tabular Q-learning agent training live in your browser — no server, no dataset, just the Bellman update running client-side.</p>
+                        <p class="qlearning-stats" id="qlearningStats">Episode 0 · ε = 1.00 · best path: —</p>
+                    </div>
                 </div>
-                <p id="aboutBruno" class="section-summary">I started as a software engineer, moved into data science, and have spent the last few years narrowing in on the layer where statistics turns into action: causal inference, contextual bandits, and policy learning. Most of my day-to-day is building and operating decision systems in production — pricing, personalization, marketing — but I treat that work as a source of research questions, not just delivery. Competitions, an undergraduate thesis in space-plasma physics, and problems from work have each, in turn, become a methods question worth writing up properly.</p>
             </div>
         </section>
 
@@ -123,15 +134,6 @@
                             </ul>
                         </details>
                     </article>
-                </div>
-                <div class="qlearning-panel">
-                    <div class="qlearning-visual">
-                        <canvas id="qlearningCanvas" aria-hidden="true"></canvas>
-                    </div>
-                    <div class="qlearning-caption">
-                        <p>A tabular Q-learning agent training live in your browser — no server, no dataset, just the Bellman update running client-side. It re-learns the maze from a blank table every few dozen episodes.</p>
-                        <p class="qlearning-stats" id="qlearningStats">Episode 0 · ε = 1.00 · best path: —</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -247,10 +249,10 @@
                     <div class="recognition-column">
                         <h3>Awards</h3>
                         <ul class="plain-list">
-                            <li>LATAM/ITA/DECEA Data Science Challenge 2023 — 2nd place</li>
-                            <li>Data Science Game 2018 — 4th place</li>
-                            <li>Data Mining Cup 2022 — 4th place</li>
-                            <li>KDD-BR 2018 (Brazilian KDD competition)</li>
+                            <li><a href="#research">LATAM/ITA/DECEA Data Science Challenge 2023 — 2nd place</a></li>
+                            <li><a href="https://www.unifal-mg.edu.br/portal/2018/11/20/estudantes-de-ciencia-da-computacao-da-unifal-mg-conquistam-4o-lugar-na-copa-do-mundo-de-ciencia-de-dados-e-quebram-hegemonia-europeia-na-competicao/" target="_blank" rel="noopener">Data Science Game 2018 — 4th place</a></li>
+                            <li><a href="https://medium.com/@vilelabruno/dmc-2022-svd-x-markov-chain-690f789c0ba0" target="_blank" rel="noopener">Data Mining Cup 2022 — 4th place</a></li>
+                            <li><a href="https://www.kaggle.com/c/kddbr-2018/leaderboard" target="_blank" rel="noopener">KDD-BR 2018 (Brazilian KDD competition)</a></li>
                         </ul>
                     </div>
                     <div class="recognition-column">
@@ -400,6 +402,24 @@
                 try { localStorage.setItem('theme', 'dark'); } catch (e) {}
             }
         });
+
+        (function () {
+            var nav = document.getElementById('mainNav');
+            var closePending = false;
+            document.querySelectorAll('#mainNav .nav-link').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    nav.classList.remove('show');
+                    closePending = true;
+                });
+            });
+            // Bootstrap's own opening transition can finish after the link
+            // click and re-add "show"; close again once it settles.
+            if (window.jQuery) {
+                window.jQuery(nav).on('shown.bs.collapse', function () {
+                    if (closePending) nav.classList.remove('show');
+                });
+            }
+        })();
     </script>
 </body>
 

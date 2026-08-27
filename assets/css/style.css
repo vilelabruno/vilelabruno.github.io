@@ -85,6 +85,10 @@ header.hero {
   padding: 96px 0;
 }
 
+section[id] {
+  scroll-margin-top: 90px;
+}
+
 .section-surface {
   background: var(--surface);
 }
@@ -316,22 +320,25 @@ header.hero {
   gap: 28px;
 }
 
-.qlearning-panel {
-  margin-top: 28px;
-  background: var(--surface-alt);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 28px;
-  box-shadow: var(--shadow-sm);
+.about-grid {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 32px;
+  grid-template-columns: 1fr minmax(220px, 300px);
+  gap: 48px;
   align-items: center;
 }
 
+.about-visual {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
 .qlearning-visual {
-  width: 240px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 220px;
   aspect-ratio: 1 / 1;
   margin: 0 auto;
 }
@@ -344,24 +351,28 @@ header.hero {
   background: var(--surface-soft);
 }
 
-.qlearning-caption p {
-  margin-bottom: 0.6rem;
-}
-
-.qlearning-caption p:last-child {
-  margin-bottom: 0;
+.qlearning-caption-text {
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 
 .qlearning-stats {
+  margin-bottom: 0;
   color: var(--muted);
   font-size: 0.85rem;
   font-variant-numeric: tabular-nums;
 }
 
-@media (max-width: 700px) {
-  .qlearning-panel {
+@media (max-width: 860px) {
+  .about-grid {
     grid-template-columns: 1fr;
-    text-align: center;
+  }
+
+  .about-visual {
+    max-width: 320px;
+    margin: 0 auto;
   }
 }
 
