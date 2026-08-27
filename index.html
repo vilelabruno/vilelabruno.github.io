@@ -3,17 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="theme-color" content="#ffffff" id="themeColorMeta">
+    <script>
+        (function () {
+            try {
+                if (localStorage.getItem('theme') === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    document.getElementById('themeColorMeta').setAttribute('content', '#08090c');
+                }
+            } catch (e) {}
+        })();
+    </script>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Bruno Vilela</title>
-    <meta name="description" content="Bruno Vilela Quirino - Staff Data Scientist">
-    <meta name="keywords" content="Bruno Vilela Quirino, Staff Data Scientist, Machine Learning, GenAI, MLOps">
-    <meta name="theme-color" content="#0b0d11">
+    <meta name="description" content="Bruno Vilela Quirino — data scientist working on causal inference, contextual bandits, and decision-making under uncertainty.">
+    <meta name="keywords" content="Bruno Vilela Quirino, Causal Inference, Contextual Bandits, Reinforcement Learning, Off-Policy Evaluation, Decision Science, Machine Learning">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Bruno Vilela">
     <meta property="og:url" content="http://vilelabruno.github.io/">
     <meta property="og:title" content="Bruno Vilela Quirino">
-    <meta property="og:description" content="Staff Data Scientist">
+    <meta property="og:description" content="Data scientist working on causal inference, contextual bandits, and decision-making under uncertainty.">
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -32,10 +42,16 @@
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav ml-auto align-items-lg-center">
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://medium.com/@vilelabruno" target="_blank">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://vilelabruno.github.io/portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#writing">Writing</a></li>
+                    <li class="nav-item">
+                        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+                            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+                            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        </button>
+                    </li>
                     <li class="nav-item"><a class="btn btn-outline" href="2018_BrunoVilela_resume.pdf" target="_blank">Resume</a></li>
                 </ul>
             </div>
@@ -47,9 +63,9 @@
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-text">
-                        <span class="hero-subtitle" id="descBruno">Staff Data Scientist</span>
+                        <span class="hero-subtitle" id="descBruno">Staff Data Scientist · LATAM Airlines</span>
                         <h1 class="hero-title">Bruno Vilela Quirino</h1>
-                        <p class="hero-summary" id="heroOneLiner">I design and govern enterprise-grade GenAI and ML platforms that power personalization and decisioning at scale. Hands-on with reinforcement learning (contextual bandits, Q-learning), recommendation systems (NBO), and MLOps on Vertex AI, with multi-cloud experience (GCP, Azure, AWS).</p>
+                        <p class="hero-summary" id="heroOneLiner">I work at the boundary between causal inference and machine learning: estimating the effect of actions, learning policies from those estimates, and building systems that decide under uncertainty. In production, that means contextual bandits and treatment-effect models inside large-scale personalization and marketing platforms. Alongside that, I'm building an independent research track, one paper at a time.</p>
                         <div class="hero-cta">
                             <a class="btn btn-primary" href="2018_BrunoVilela_resume.pdf" target="_blank">Download resume</a>
                             <a class="btn btn-outline" href="https://www.linkedin.com/in/vilelabruno00/" target="_blank">Connect on LinkedIn</a>
@@ -59,7 +75,6 @@
                         <div class="avatar-frame">
                             <img src="assets/images/profile3.jpg" alt="Bruno Vilela" class="avatar">
                         </div>
-                        <p class="hero-hobbies" id="hobbies">Guitar, mountain biking, and travel.</p>
                     </div>
                 </div>
             </div>
@@ -68,36 +83,55 @@
         <section id="about" class="section">
             <div class="container container-narrow">
                 <div class="section-header align-left">
-                    <span class="eyebrow">Professional Summary</span>
-                    <h2 class="section-title">Architecting responsible AI platforms</h2>
+                    <span class="eyebrow">About</span>
+                    <h2 class="section-title">From engineering to decision science</h2>
                 </div>
-                <p id="aboutBruno" class="section-summary">I'm a staff data scientist focused on building and governing GenAI/ML platforms for aviation and adjacent domains. My work combines advanced modeling and reinforcement learning with architecture governance, integration blueprints, privacy-by-design, and reliable MLOps. I partner with engineering and product to translate strategy into scalable systems, ensuring experimentation discipline (A/B testing, DoE), observability, and measurable business impact.</p>
+                <p id="aboutBruno" class="section-summary">I started as a software engineer, moved into data science, and have spent the last few years narrowing in on the layer where statistics turns into action: causal inference, contextual bandits, and policy learning. Most of my day-to-day is building and operating decision systems in production — pricing, personalization, marketing — but I treat that work as a source of research questions, not just delivery. Competitions, an undergraduate thesis in space-plasma physics, and problems from work have each, in turn, become a methods question worth writing up properly.</p>
             </div>
         </section>
 
-        <section id="featured" class="section section-surface">
+        <section id="research" class="section section-surface">
             <div class="container">
                 <div class="section-header">
-                    <span class="eyebrow">Featured Work</span>
-                    <h2 class="section-title">Impact highlights</h2>
+                    <span class="eyebrow">Research</span>
+                    <h2 class="section-title">Causal inference and decision-making under uncertainty</h2>
                 </div>
+                <p class="section-summary" style="max-width: 720px; margin: -1rem auto 2.5rem; text-align: center;">My focus is the gap between a good model and a good decision: how to move from an estimate to a policy that can be trusted, measured, and defended once it's live.</p>
                 <div class="card-grid">
                     <article class="feature-card">
-                        <h3>NBO Platform on Vertex AI</h3>
-                        <p>Owned the integration patterns, security controls, and MLOps review gates that moved multi-channel next-best-offer journeys from pilot to production.</p>
+                        <h3>Causal effects, not just predictions</h3>
+                        <p>Estimating heterogeneous treatment effects (CATE/HTE) with doubly-robust and orthogonal methods, and using them to build decision policies rather than stop at a point prediction.</p>
                     </article>
                     <article class="feature-card">
-                        <h3>RL for Personalization</h3>
-                        <p>Delivered contextual bandits and Q-learning services via APIs, pairing RL policies with GenAI-assisted template suggestions for dynamic campaigns.</p>
+                        <h3>Bandits that keep their guarantees</h3>
+                        <p>Contextual bandits and Thompson Sampling for sequential decisions, with an eye on what breaks off-policy evaluation once a system starts learning from its own exploration.</p>
                     </article>
-                    <article class="feature-card">
-                        <h3>Architecture Governance</h3>
-                        <p>Defined standards, review gates, and cost/performance trade-offs aligned with well-architected principles covering reliability, security, cost, performance, and operations.</p>
+                </div>
+                <div class="timeline" style="margin-top: 28px;">
+                    <article class="project-card">
+                        <header class="project-header">
+                            <h3>Geometry-Aware Flight-Time Prediction from Convective Polygon Intersections</h3>
+                            <span class="project-link">Manuscript in preparation</span>
+                        </header>
+                        <p>A gradient-boosted regressor for realized takeoff-to-landing flight time that treats convective weather as geometry — segmenting storm imagery into georeferenced polygons and spatially joining them against radar-derived flight tracks, instead of collapsing weather into airport-level scalars. Grew out of a 2nd-place finish in the LATAM/ITA/DECEA air-traffic data science challenge.</p>
+                        <details class="project-details">
+                            <summary>Method and result</summary>
+                            <ul>
+                                <li>Fuses air-traffic movement logs (BIMTRA), EUROCONTROL CAT-62 radar tracks, METAR/METAF weather reports, and image-derived convective polygons into a single LightGBM pipeline.</li>
+                                <li>Explicit spatial joins between flight tracks and georeferenced storm polygons — the geometry of convection as a first-class feature, not an image fed to a CNN.</li>
+                                <li>286,080 flights, 73 engineered predictors; 5-fold cross-validated RMSE of 363s (473s held-out), roughly halving error on convective flights versus a no-imagery baseline.</li>
+                            </ul>
+                        </details>
                     </article>
-                    <article class="feature-card">
-                        <h3>Cross-Functional Delivery</h3>
-                        <p>Partnered with engineering, product, and commercial teams to link platform capabilities to customer experience and revenue outcomes.</p>
-                    </article>
+                </div>
+                <div class="qlearning-panel">
+                    <div class="qlearning-visual">
+                        <canvas id="qlearningCanvas" aria-hidden="true"></canvas>
+                    </div>
+                    <div class="qlearning-caption">
+                        <p>A tabular Q-learning agent training live in your browser — no server, no dataset, just the Bellman update running client-side. It re-learns the maze from a blank table every few dozen episodes.</p>
+                        <p class="qlearning-stats" id="qlearningStats">Episode 0 · ε = 1.00 · best path: —</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -106,7 +140,7 @@
             <div class="container">
                 <div class="section-header">
                     <span class="eyebrow">Selected Experience</span>
-                    <h2 class="section-title">Building AI platforms end-to-end</h2>
+                    <h2 class="section-title">Building decision systems end-to-end</h2>
                 </div>
                 <div class="timeline">
                     <article class="timeline-card">
@@ -115,12 +149,12 @@
                             <span class="role">Staff Data Scientist</span>
                         </header>
                         <ul>
-                            <li>Owned NBO platform architecture on GCP Vertex AI; acted as design authority across squads.</li>
-                            <li>Built uplift modeling pipelines powering ancillary upsell and lifecycle marketing triggers.</li>
-                            <li>Designed and deployed multi-armed bandit services for experimentation and journey orchestration, using GenAI assistance to craft template variants from bandit context.</li>
-                            <li>Delivered product recommendation engines (collaborative filtering, content-based) integrated with personalization APIs.</li>
-                            <li>Developed customer lifetime value segmentation and monitoring dashboards linked to commercial planning.</li>
-                            <li>Led architecture reviews, privacy controls, and MLOps standards (CI/CD, registry, monitoring) to reduce time-to-production risk.</li>
+                            <li>Own NBO platform architecture on GCP Vertex AI; act as design authority across squads.</li>
+                            <li>Build uplift modeling pipelines powering ancillary upsell and lifecycle marketing triggers.</li>
+                            <li>Design and deploy contextual bandit services for experimentation and journey orchestration.</li>
+                            <li>Deliver product recommendation engines (collaborative filtering, content-based) integrated with personalization APIs.</li>
+                            <li>Develop customer lifetime value segmentation and monitoring dashboards linked to commercial planning.</li>
+                            <li>Lead architecture reviews, privacy controls, and MLOps standards (CI/CD, registry, monitoring) to reduce time-to-production risk.</li>
                         </ul>
                     </article>
                     <article class="timeline-card">
@@ -171,28 +205,32 @@
             <div class="container">
                 <div class="section-header">
                     <span class="eyebrow">Skills</span>
-                    <h2 class="section-title">Architectural and scientific toolkit</h2>
+                    <h2 class="section-title">Research and engineering toolkit</h2>
                 </div>
                 <div class="skills-grid">
                     <article class="skill-card">
-                        <h3>Platforms &amp; Governance</h3>
+                        <h3>Causal Inference &amp; Decision Science</h3>
                         <ul>
-                            <li>Cloud &amp; Platforms: GCP Vertex AI; Azure (Data/AI); AWS</li>
-                            <li>Architecture &amp; Governance: Microservices; Event-Driven; API-First; Architecture Reviews; Well-Architected; Privacy-by-Design; C4/UML</li>
+                            <li>Causal inference: CATE/HTE estimation, doubly-robust methods</li>
+                            <li>Contextual bandits: Thompson Sampling, off-policy evaluation</li>
+                            <li>Recommenders (NBO); uplift modeling</li>
+                            <li>A/B testing &amp; DoE; interpretable linear/logistic models</li>
                         </ul>
                     </article>
                     <article class="skill-card">
-                        <h3>Data &amp; MLOps</h3>
+                        <h3>ML &amp; MLOps</h3>
                         <ul>
-                            <li>Data &amp; AI: Reinforcement Learning (contextual bandits, Q-learning); Recommenders (NBO); RAG/Embeddings; Vector DB; Feature Stores; Observability</li>
-                            <li>MLOps &amp; DevSecOps: CI/CD for ML; Model Registry; Lineage; Monitoring &amp; Drift; IaC</li>
+                            <li>Reinforcement learning (contextual bandits, Q-learning)</li>
+                            <li>RAG/Embeddings; Vector DB; Feature stores; Observability</li>
+                            <li>CI/CD for ML; Model registry; Lineage; Monitoring &amp; drift; IaC</li>
                         </ul>
                     </article>
                     <article class="skill-card">
-                        <h3>Integration &amp; Analytics</h3>
+                        <h3>Platforms &amp; Engineering</h3>
                         <ul>
-                            <li>Web &amp; Integration: REST APIs; PHP (Laravel/CodeIgniter), MVC; JavaScript/jQuery; HTML/CSS/Bootstrap; Docker</li>
-                            <li>Analytics: Causal inference; A/B testing &amp; DoE; Time series; Clustering; Interpretable linear/logistic models</li>
+                            <li>GCP Vertex AI; Azure (Data/AI); AWS</li>
+                            <li>Microservices; Event-driven; API-first; Architecture reviews; Well-Architected; Privacy-by-design</li>
+                            <li>Spark/Databricks; Python, Scala; REST APIs; earlier full-stack background (PHP/Laravel, JS)</li>
                         </ul>
                     </article>
                 </div>
@@ -209,9 +247,9 @@
                     <div class="recognition-column">
                         <h3>Awards</h3>
                         <ul class="plain-list">
-                            <li>Data Science Game 2018 - 4th place</li>
-                            <li>Data Mining Cup 2022 - 4th place</li>
-                            <li>ITA - LATAM Data Science Challenge 2023</li>
+                            <li>LATAM/ITA/DECEA Data Science Challenge 2023 — 2nd place</li>
+                            <li>Data Science Game 2018 — 4th place</li>
+                            <li>Data Mining Cup 2022 — 4th place</li>
                             <li>KDD-BR 2018 (Brazilian KDD competition)</li>
                         </ul>
                     </div>
@@ -241,7 +279,7 @@
                             <h3>COSMIC - Python package for magnetic turbulence analysis</h3>
                             <a class="project-link" href="https://github.com/vilelabruno/COSMIC" target="_blank" rel="noopener">Repository</a>
                         </header>
-                        <p>A reusable library inspired by ESA Cluster mission data. Originated from an undergraduate thesis and now released as a tested, reusable package with a clear API for professional portfolios.</p>
+                        <p>A reusable library inspired by ESA Cluster mission data. Originated from an undergraduate thesis on magnetic reconnection and extreme-event statistics, now released as a tested package with a clear API.</p>
                         <details class="project-details">
                             <summary>Key features</summary>
                             <ul>
@@ -253,7 +291,6 @@
                                 <li>MVA, multi-point timing analysis, field-line curvature estimation, helicity, tetrahedron quality factors.</li>
                                 <li>Extreme value analysis tools: POT, declustering, and associated visualizations.</li>
                                 <li>Automated tests with pytest for reproducible results.</li>
-                                <li>Patent held by the author.</li>
                             </ul>
                         </details>
                     </article>
@@ -273,20 +310,6 @@
                     </article>
                     <article class="project-card">
                         <header class="project-header">
-                            <h3>whatsthis</h3>
-                            <a class="project-link" href="https://github.com/vilelabruno/whatsthis" target="_blank" rel="noopener">Repository</a>
-                        </header>
-                        <p>Chrome extension to fetch WhatsApp messages by number.</p>
-                    </article>
-                    <article class="project-card">
-                        <header class="project-header">
-                            <h3>getIgId</h3>
-                            <a class="project-link" href="https://github.com/vilelabruno/getIgId" target="_blank" rel="noopener">Repository</a>
-                        </header>
-                        <p>Minimal API to retrieve Instagram user IDs.</p>
-                    </article>
-                    <article class="project-card">
-                        <header class="project-header">
                             <h3>HashCode problems</h3>
                         </header>
                         <p>Documented solutions with complexity notes and heuristic strategies.</p>
@@ -296,11 +319,11 @@
             </div>
         </section>
 
-        <section id="blog" class="section">
+        <section id="writing" class="section">
             <div class="container">
                 <div class="section-header">
-                    <span class="eyebrow">Blog</span>
-                    <h2 class="section-title">Recent writing</h2>
+                    <span class="eyebrow">Writing</span>
+                    <h2 class="section-title">Notes on methods and results</h2>
                 </div>
                 <div class="blog-grid">
                     <article class="blog-card">
@@ -310,10 +333,6 @@
                     <article class="blog-card">
                         <h3><a href="https://medium.com/@vilelabruno/identificando-eventos-extremos-com-teste-de-dk-99af22df8c14" target="_blank" rel="noopener">Identifying Extreme Events with the Dragon-King Test</a></h3>
                         <p>A practical walkthrough on detecting heavy-tail anomalies; statistical assumptions, implementation notes, operational caveats, and visualization tips.</p>
-                    </article>
-                    <article class="blog-card">
-                        <h3><a href="https://medium.com/@vilelabruno/captcha-solver-para-iniciantes-c0501a9b5f8a" target="_blank" rel="noopener">Captcha Solver</a></h3>
-                        <p>End-to-end pipeline for CAPTCHA solving: data collection, augmentation, model training, evaluation trade-offs (accuracy vs. latency), and deployment considerations.</p>
                     </article>
                 </div>
             </div>
@@ -325,17 +344,15 @@
                     <div class="contact-info">
                         <div class="section-header align-left">
                             <span class="eyebrow">Contact</span>
-                            <h2 class="section-title">Let's collaborate</h2>
+                            <h2 class="section-title">Let's talk</h2>
                         </div>
-                        <p class="contact-text">For speaking, collaboration, or advisory requests, please reach out via the form or connect on LinkedIn. I'm open to high-impact projects in GenAI platforms, personalization, and architecture governance.</p>
+                        <p class="contact-text">Happy to talk about causal inference, bandits, decision systems, or possible collaborations — research or applied. Reach out via the form or connect on LinkedIn.</p>
                         <div class="social-list">
                             <a href="https://medium.com/@vilelabruno/" target="_blank" class="fab fa-medium" aria-label="Medium"></a>
                             <a href="https://web.whatsapp.com/send?phone=5535999556508" target="_blank" class="fab fa-whatsapp" aria-label="WhatsApp"></a>
                             <a href="https://www.linkedin.com/in/vilelabruno00/" target="_blank" class="fab fa-linkedin" aria-label="LinkedIn"></a>
                             <a href="https://github.com/vilelabruno" target="_blank" class="fab fa-github" aria-label="GitHub"></a>
                             <a href="https://www.kaggle.com/brunov1lela" target="_blank" class="fab fa-kaggle" aria-label="Kaggle"></a>
-                            <a href="https://www.instagram.com/data.vilela/" target="_blank" class="fab fa-instagram" aria-label="Instagram"></a>
-                            <a href="https://open.spotify.com/user/2cucdkknzqpehp3pqj9k6xhvt?si=FIkhCvGTSBOuu0nXpPBASA" target="_blank" class="fab fa-spotify" aria-label="Spotify"></a>
                         </div>
                     </div>
                     <form method="post" class="contact-form" action="https://forms.un-static.com/forms/cf74ae2aa19a016ecb4df51242bf27c1ec69c742">
@@ -360,13 +377,30 @@
 
     <footer class="site-footer">
         <div class="container footer-inner">
-            <p>&copy; BRUNO VILELA 2019 - ALL RIGHTS RESERVED.</p>
+            <p>&copy; Bruno Vilela, 2026.</p>
         </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="assets/js/qlearning.js" defer></script>
+    <script>
+        document.getElementById('themeToggle').addEventListener('click', function () {
+            var root = document.documentElement;
+            var meta = document.getElementById('themeColorMeta');
+            var isDark = root.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                root.removeAttribute('data-theme');
+                if (meta) meta.setAttribute('content', '#ffffff');
+                try { localStorage.setItem('theme', 'light'); } catch (e) {}
+            } else {
+                root.setAttribute('data-theme', 'dark');
+                if (meta) meta.setAttribute('content', '#08090c');
+                try { localStorage.setItem('theme', 'dark'); } catch (e) {}
+            }
+        });
+    </script>
 </body>
 
 </html>
