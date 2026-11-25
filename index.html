@@ -1,425 +1,283 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="theme-color" content="#ffffff" id="themeColorMeta">
+    <meta name="theme-color" content="#fbfbf9" id="themeColorMeta">
     <script>
         (function () {
             try {
                 if (localStorage.getItem('theme') === 'dark') {
                     document.documentElement.setAttribute('data-theme', 'dark');
-                    document.getElementById('themeColorMeta').setAttribute('content', '#08090c');
+                    document.getElementById('themeColorMeta').setAttribute('content', '#0f1115');
                 }
             } catch (e) {}
         })();
     </script>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Bruno Vilela</title>
-    <meta name="description" content="Bruno Vilela Quirino — data scientist working on causal inference, contextual bandits, and decision-making under uncertainty.">
-    <meta name="keywords" content="Bruno Vilela Quirino, Causal Inference, Contextual Bandits, Reinforcement Learning, Off-Policy Evaluation, Decision Science, Machine Learning">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bruno Vilela Quirino — Research</title>
+    <meta name="description" content="Bruno Vilela Quirino — research on causal inference, decision science, optimization and machine learning, with applications in quantitative finance and recommender systems.">
+    <meta name="keywords" content="Bruno Vilela Quirino, Quantitative Finance, Causal Inference, Decision Science, Contextual Bandits, Optimization, Recommender Systems, Structural Break Detection, Machine Learning">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Bruno Vilela">
-    <meta property="og:url" content="http://vilelabruno.github.io/">
-    <meta property="og:title" content="Bruno Vilela Quirino">
-    <meta property="og:description" content="Data scientist working on causal inference, contextual bandits, and decision-making under uncertainty.">
+    <meta property="og:site_name" content="Bruno Vilela Quirino">
+    <meta property="og:url" content="https://vilelabruno.github.io/">
+    <meta property="og:title" content="Bruno Vilela Quirino — Research">
+    <meta property="og:description" content="Causal inference, decision science, optimization and ML for quantitative finance and recommender systems.">
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg main-nav">
-        <div class="container">
-            <a class="navbar-brand" href="#">Bruno Vilela</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
-                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ml-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#writing">Writing</a></li>
-                    <li class="nav-item">
-                        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
-                            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
-                            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                        </button>
-                    </li>
-                    <li class="nav-item"><a class="btn btn-outline" href="2018_BrunoVilela_resume.pdf" target="_blank">Resume</a></li>
-                </ul>
+    <nav class="nav">
+        <div class="wrap">
+            <a class="nav-brand" href="#top">Bruno Vilela</a>
+            <div class="nav-links">
+                <a href="#research">Research</a>
+                <a href="#work">Selected work</a>
+                <a href="#writing">Writing</a>
+                <a href="#code">Code</a>
+                <a href="#competitions">Competitions</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+                <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+                    <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
             </div>
         </div>
     </nav>
 
-    <main>
-        <header class="hero section">
-            <div class="container">
-                <div class="hero-grid">
-                    <div class="hero-text">
-                        <span class="hero-subtitle" id="descBruno">Staff Data Scientist · LATAM Airlines</span>
-                        <h1 class="hero-title">Bruno Vilela Quirino</h1>
-                        <p class="hero-summary" id="heroOneLiner">I work at the boundary between causal inference and machine learning: estimating the effect of actions, learning policies from those estimates, and building systems that decide under uncertainty. In production, that means contextual bandits and treatment-effect models inside large-scale personalization and marketing platforms. Alongside that, I'm building an independent research track, one paper at a time.</p>
-                        <div class="hero-cta">
-                            <a class="btn btn-primary" href="2018_BrunoVilela_resume.pdf" target="_blank">Download resume</a>
-                            <a class="btn btn-outline" href="https://www.linkedin.com/in/vilelabruno00/" target="_blank">Connect on LinkedIn</a>
-                        </div>
-                    </div>
-                    <div class="hero-image">
-                        <div class="avatar-frame">
-                            <img src="assets/images/profile3.jpg" alt="Bruno Vilela" class="avatar">
-                        </div>
+    <main id="top">
+        <header class="intro">
+            <div class="wrap intro-grid">
+                <div>
+                    <h1>Bruno Vilela Quirino</h1>
+                    <p class="role">Staff Data Scientist, LATAM Airlines · independent researcher</p>
+                    <p>I study how to turn data into decisions that hold up once they are live. My work combines causal inference, decision science, optimization and machine learning, and I apply it in two places: quantitative finance (change-point detection, regime-switching simulation, return forecasting) and large-scale recommendation and personalization.</p>
+                    <p>The common thread is evaluation. A model is only useful if its estimates survive leakage, non-stationarity and the feedback loop created by acting on them. I try to measure that before trusting any gain.</p>
+                    <div class="links">
+                        <a href="https://github.com/vilelabruno" target="_blank" rel="noopener">GitHub</a>
+                        <a href="https://medium.com/@vilelabruno" target="_blank" rel="noopener">Medium</a>
+                        <a href="https://www.linkedin.com/in/vilelabruno00/" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://www.kaggle.com/brunov1lela" target="_blank" rel="noopener">Kaggle</a>
+                        <a href="2018_BrunoVilela_resume.pdf" target="_blank" rel="noopener">CV (PDF)</a>
                     </div>
                 </div>
+                <img src="assets/images/profile5.jpg" alt="Bruno Vilela Quirino" class="avatar">
             </div>
         </header>
 
-        <section id="about" class="section">
-            <div class="container">
-                <div class="about-grid">
-                    <div class="about-text">
-                        <div class="section-header align-left">
-                            <span class="eyebrow">About</span>
-                            <h2 class="section-title">From engineering to decision science</h2>
-                        </div>
-                        <p id="aboutBruno" class="section-summary">I started as a software engineer, moved into data science, and have spent the last few years narrowing in on the layer where statistics turns into action: causal inference, contextual bandits, and policy learning. Most of my day-to-day is building and operating decision systems in production — pricing, personalization, marketing — but I treat that work as a source of research questions, not just delivery. Competitions, an undergraduate thesis in space-plasma physics, and problems from work have each, in turn, become a methods question worth writing up properly.</p>
-                    </div>
-                    <div class="about-visual">
-                        <div class="qlearning-visual">
-                            <canvas id="qlearningCanvas" aria-hidden="true"></canvas>
-                        </div>
-                        <p class="qlearning-caption-text">A tabular Q-learning agent training live in your browser — no server, no dataset, just the Bellman update running client-side.</p>
+        <div class="wrap">
+            <section id="news">
+                <h2 class="sec-title">Recent</h2>
+                <ul class="news">
+                    <li><time>Nov 2026</time><span>Write-up: <a href="https://medium.com/@vilelabruno/teaching-a-tcn-with-synthetic-worlds-domain-randomization-and-regime-pair-resampling-in-the-adia-98be9a4137ea" target="_blank" rel="noopener">Teaching a TCN with synthetic worlds</a>, on domain randomization and regime-pair resampling for structural-break detection.</span></li>
+                    <li><time>Oct 2026</time><span>Poster at the ADIA Lab Symposium 2026 on real-time structural-break detection.</span></li>
+                    <li><time>Sep 2023</time><span>Write-up: <a href="https://medium.com/@vilelabruno/dmc-2022-svd-x-markov-chain-690f789c0ba0" target="_blank" rel="noopener">DMC 2022: SVD x Markov Chain</a>.</span></li>
+                    <li><time>2023</time><span>2nd place, LATAM/ITA/DECEA Data Science Challenge.</span></li>
+                    <li><time>2022</time><span>4th place, Data Mining Cup.</span></li>
+                </ul>
+            </section>
+
+            <section id="research">
+                <h2 class="sec-title">Research interests</h2>
+                <p class="lead">Four connected themes. I move between them because the same questions keep returning: what can be identified from the data, what the decision is, and how to evaluate it honestly.</p>
+                <div class="themes">
+                    <article class="theme">
+                        <h3>Causal inference and policy learning</h3>
+                        <p>Heterogeneous treatment effects with doubly-robust pseudo-outcomes, uplift modeling, contextual bandits and off-policy evaluation. Particular interest in what breaks OPE when a system learns from its own exploration.</p>
+                        <div class="tags"><span>CATE / HTE</span><span>DR learners</span><span>Thompson Sampling</span><span>OPE</span></div>
+                    </article>
+                    <article class="theme">
+                        <h3>Decision science and optimization</h3>
+                        <p>Decisions under uncertainty with explicit costs: portfolio construction, allocation under constraints, and heuristic search on combinatorial problems (Google Hash Code, Advent of Code).</p>
+                        <div class="tags"><span>Mean-variance</span><span>Constrained allocation</span><span>Heuristics</span></div>
+                    </article>
+                    <article class="theme">
+                        <h3>Quantitative finance and time series</h3>
+                        <p>Online change-point detection, regime-switching generators (MS-GARCH), cross-sectional return forecasting, and extreme-value statistics for tail events. Strong focus on leakage-free validation and noise floors for small effects.</p>
+                        <div class="tags"><span>Structural breaks</span><span>MS-GARCH</span><span>EVT</span><span>Cross-section</span></div>
+                    </article>
+                    <article class="theme">
+                        <h3>Recommender systems and applied ML</h3>
+                        <p>Next-best-offer and personalization at scale, matrix factorization and sequence models for repeat purchase, plus gradient boosting and neural stacks for tabular and geospatial prediction.</p>
+                        <div class="tags"><span>NBO</span><span>SVD / Markov</span><span>GBDT stacks</span><span>TCN</span></div>
+                    </article>
+                </div>
+
+                <div class="toy">
+                    <div class="qlearning-visual"><canvas id="qlearningCanvas" aria-hidden="true"></canvas></div>
+                    <div>
+                        <p>A toy for the sequential-decision side of the work: a tabular Q-learning agent training live in your browser. No server, no data, just the Bellman update.</p>
                         <p class="qlearning-stats" id="qlearningStats">Episode 0 · ε = 1.00 · best path: —</p>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="research" class="section section-surface">
-            <div class="container">
-                <div class="section-header">
-                    <span class="eyebrow">Research</span>
-                    <h2 class="section-title">Causal inference and decision-making under uncertainty</h2>
-                </div>
-                <p class="section-summary" style="max-width: 720px; margin: -1rem auto 2.5rem; text-align: center;">My focus is the gap between a good model and a good decision: how to move from an estimate to a policy that can be trusted, measured, and defended once it's live.</p>
-                <div class="card-grid">
-                    <article class="feature-card">
-                        <h3>Causal effects, not just predictions</h3>
-                        <p>Estimating heterogeneous treatment effects (CATE/HTE) with doubly-robust and orthogonal methods, and using them to build decision policies rather than stop at a point prediction.</p>
-                    </article>
-                    <article class="feature-card">
-                        <h3>Bandits that keep their guarantees</h3>
-                        <p>Contextual bandits and Thompson Sampling for sequential decisions, with an eye on what breaks off-policy evaluation once a system starts learning from its own exploration.</p>
-                    </article>
-                </div>
-                <div class="timeline" style="margin-top: 28px;">
-                    <article class="project-card">
-                        <header class="project-header">
-                            <h3>Geometry-Aware Flight-Time Prediction from Convective Polygon Intersections</h3>
-                            <span class="project-link">Manuscript in preparation</span>
-                        </header>
-                        <p>A gradient-boosted regressor for realized takeoff-to-landing flight time that treats convective weather as geometry — segmenting storm imagery into georeferenced polygons and spatially joining them against radar-derived flight tracks, instead of collapsing weather into airport-level scalars. Grew out of a 2nd-place finish in the LATAM/ITA/DECEA air-traffic data science challenge.</p>
-                        <details class="project-details">
-                            <summary>Method and result</summary>
-                            <ul>
-                                <li>Fuses air-traffic movement logs (BIMTRA), EUROCONTROL CAT-62 radar tracks, METAR/METAF weather reports, and image-derived convective polygons into a single LightGBM pipeline.</li>
-                                <li>Explicit spatial joins between flight tracks and georeferenced storm polygons — the geometry of convection as a first-class feature, not an image fed to a CNN.</li>
-                                <li>286,080 flights, 73 engineered predictors; 5-fold cross-validated RMSE of 363s (473s held-out), roughly halving error on convective flights versus a no-imagery baseline.</li>
-                            </ul>
-                        </details>
-                    </article>
-                </div>
-            </div>
-        </section>
+            <section id="work">
+                <h2 class="sec-title">Selected work</h2>
 
-        <section id="experience" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="eyebrow">Selected Experience</span>
-                    <h2 class="section-title">Building decision systems end-to-end</h2>
-                </div>
-                <div class="timeline">
-                    <article class="timeline-card">
-                        <header>
-                            <h3>LATAM Airlines</h3>
-                            <span class="role">Staff Data Scientist</span>
-                        </header>
-                        <ul>
-                            <li>Own NBO platform architecture on GCP Vertex AI; act as design authority across squads.</li>
-                            <li>Build uplift modeling pipelines powering ancillary upsell and lifecycle marketing triggers.</li>
-                            <li>Design and deploy contextual bandit services for experimentation and journey orchestration.</li>
-                            <li>Deliver product recommendation engines (collaborative filtering, content-based) integrated with personalization APIs.</li>
-                            <li>Develop customer lifetime value segmentation and monitoring dashboards linked to commercial planning.</li>
-                            <li>Lead architecture reviews, privacy controls, and MLOps standards (CI/CD, registry, monitoring) to reduce time-to-production risk.</li>
-                        </ul>
-                    </article>
-                    <article class="timeline-card">
-                        <header>
-                            <h3>Kumulus</h3>
-                            <span class="role">Senior Data Scientist</span>
-                        </header>
-                        <ul>
-                            <li>Delivered RAG pipelines and GenAI chatbots spanning web and WhatsApp, covering document understanding, demand forecasting, and computer vision briefs.</li>
-                            <li>Applied contextual bandits and reinforcement learning to guide chatbot flows and conversion prompts against user-specific variables.</li>
-                            <li>Orchestrated Databricks/Spark ETLs with Azure/AWS integrations, leveraging LangChain retrieval workflows and production observability.</li>
-                        </ul>
-                    </article>
-                    <article class="timeline-card">
-                        <header>
-                            <h3>Plusoft</h3>
-                            <span class="role">Data Scientist</span>
-                        </header>
-                        <ul>
-                            <li>Executed large-scale segmentation (LTV, churn tendencies), geomarketing, and time-series models.</li>
-                            <li>Implemented PySpark pipelines for data quality, modeling, dashboards, and API integrations.</li>
-                        </ul>
-                    </article>
-                    <article class="timeline-card">
-                        <header>
-                            <h3>Vertem</h3>
-                            <span class="role">Data Scientist</span>
-                        </header>
-                        <ul>
-                            <li>Developed anti-fraud risk modeling, segmentation, and CLV initiatives with Azure/MLflow MLOps.</li>
-                            <li>Drove stakeholder storytelling and model monitoring practices.</li>
-                        </ul>
-                    </article>
-                    <article class="timeline-card">
-                        <header>
-                            <h3>Earlier Full-Stack Engineering (Intern/Junior)</h3>
-                        </header>
-                        <ul>
-                            <li>Built full-stack web apps using PHP (Laravel/CodeIgniter), MVC, JavaScript/jQuery, HTML/CSS/Bootstrap.</li>
-                            <li>Delivered REST APIs, Docker setups, and foundational CI/CD for modular microservices.</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="section section-surface">
-            <div class="container">
-                <div class="section-header">
-                    <span class="eyebrow">Skills</span>
-                    <h2 class="section-title">Research and engineering toolkit</h2>
-                </div>
-                <div class="skills-grid">
-                    <article class="skill-card">
-                        <h3>Causal Inference &amp; Decision Science</h3>
-                        <ul>
-                            <li>Causal inference: CATE/HTE estimation, doubly-robust methods</li>
-                            <li>Contextual bandits: Thompson Sampling, off-policy evaluation</li>
-                            <li>Recommenders (NBO); uplift modeling</li>
-                            <li>A/B testing &amp; DoE; interpretable linear/logistic models</li>
-                        </ul>
-                    </article>
-                    <article class="skill-card">
-                        <h3>ML &amp; MLOps</h3>
-                        <ul>
-                            <li>Reinforcement learning (contextual bandits, Q-learning)</li>
-                            <li>RAG/Embeddings; Vector DB; Feature stores; Observability</li>
-                            <li>CI/CD for ML; Model registry; Lineage; Monitoring &amp; drift; IaC</li>
-                        </ul>
-                    </article>
-                    <article class="skill-card">
-                        <h3>Platforms &amp; Engineering</h3>
-                        <ul>
-                            <li>GCP Vertex AI; Azure (Data/AI); AWS</li>
-                            <li>Microservices; Event-driven; API-first; Architecture reviews; Well-Architected; Privacy-by-design</li>
-                            <li>Spark/Databricks; Python, Scala; REST APIs; earlier full-stack background (PHP/Laravel, JS)</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="recognition" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="eyebrow">Recognition</span>
-                    <h2 class="section-title">Awards &amp; Certifications</h2>
-                </div>
-                <div class="recognition-grid">
-                    <div class="recognition-column">
-                        <h3>Awards</h3>
-                        <ul class="plain-list">
-                            <li><a href="#research">LATAM/ITA/DECEA Data Science Challenge 2023 — 2nd place</a></li>
-                            <li><a href="https://www.unifal-mg.edu.br/portal/2018/11/20/estudantes-de-ciencia-da-computacao-da-unifal-mg-conquistam-4o-lugar-na-copa-do-mundo-de-ciencia-de-dados-e-quebram-hegemonia-europeia-na-competicao/" target="_blank" rel="noopener">Data Science Game 2018 — 4th place</a></li>
-                            <li><a href="https://medium.com/@vilelabruno/dmc-2022-svd-x-markov-chain-690f789c0ba0" target="_blank" rel="noopener">Data Mining Cup 2022 — 4th place</a></li>
-                            <li><a href="https://www.kaggle.com/c/kddbr-2018/leaderboard" target="_blank" rel="noopener">KDD-BR 2018 (Brazilian KDD competition)</a></li>
-                        </ul>
+                <article class="entry">
+                    <div class="entry-head">
+                        <h3>Real-time structural-break detection with synthetic worlds</h3>
+                        <span class="status">Competition · write-up</span>
                     </div>
-                    <div class="recognition-column">
-                        <h3>Certifications</h3>
-                        <ul class="plain-list">
-                            <li>Azure Fundamentals; Azure AI-900</li>
-                            <li>Oracle AI</li>
-                            <li>Databricks Data Scientist</li>
-                            <li>GCP Vertex AI</li>
-                            <li>AWS SageMaker</li>
+                    <div class="venue">ADIA Lab Structural Break Challenge, Real-Time Edition (CrunchDAO) · 2026</div>
+                    <p>A causal detector that, at every step, scores how likely a series has already broken. The final system is a per-step weighted vote of five members: CatBoost on 132 causal features, two temporal convolutional networks, and two students distilled from TabPFN. Training data for the networks is augmented with synthetic series generated from the training set itself, using domain randomization and MS-GARCH regime-pair resampling.</p>
+                    <details>
+                        <summary>What I learned</summary>
+                        <ul>
+                            <li>The same synthetic data helped the neural members and hurt CatBoost in every variant tried.</li>
+                            <li>A standalone gain from synthetic data said almost nothing about the gain inside the blend, in either direction.</li>
+                            <li>Measuring the implementation noise floor (thread count alone moved a CatBoost ablation by about 0.003) changed which ablations I considered informative.</li>
                         </ul>
+                    </details>
+                    <div class="entry-links">
+                        <a href="https://medium.com/@vilelabruno/teaching-a-tcn-with-synthetic-worlds-domain-randomization-and-regime-pair-resampling-in-the-adia-98be9a4137ea" target="_blank" rel="noopener">Write-up</a>
                     </div>
-                </div>
-            </div>
-        </section>
+                </article>
 
-        <section id="projects" class="section section-surface">
-            <div class="container">
-                <div class="section-header">
-                    <span class="eyebrow">Projects</span>
-                    <h2 class="section-title">Open source &amp; research</h2>
-                </div>
-                <div class="projects-grid">
-                    <article class="project-card">
-                        <header class="project-header">
-                            <h3>COSMIC - Python package for magnetic turbulence analysis</h3>
-                            <a class="project-link" href="https://github.com/vilelabruno/COSMIC" target="_blank" rel="noopener">Repository</a>
-                        </header>
-                        <p>A reusable library inspired by ESA Cluster mission data. Originated from an undergraduate thesis on magnetic reconnection and extreme-event statistics, now released as a tested package with a clear API.</p>
-                        <details class="project-details">
-                            <summary>Key features</summary>
-                            <ul>
-                                <li>Ingestion and preprocessing for .dat and CEF files, consolidating the logic from original notebooks.</li>
-                                <li>Current density and gradients via the curlometer method.</li>
-                                <li>Turbulence metrics: PVI, magnetic volatility, Gaussian-kernel smoothing.</li>
-                                <li>Robust time-series cleaning and normalization: outlier detection, magnetic energy, and one-line resampling utilities.</li>
-                                <li>Spectral diagnostics: total/parallel/perpendicular PSD, temporal and spatial correlations, high-order structure functions.</li>
-                                <li>MVA, multi-point timing analysis, field-line curvature estimation, helicity, tetrahedron quality factors.</li>
-                                <li>Extreme value analysis tools: POT, declustering, and associated visualizations.</li>
-                                <li>Automated tests with pytest for reproducible results.</li>
-                            </ul>
-                        </details>
-                    </article>
-                    <article class="project-card">
-                        <header class="project-header">
-                            <h3>MarkowitzPortfolioOPT</h3>
-                            <a class="project-link" href="https://github.com/vilelabruno/MarkowitzPortfolioOPT" target="_blank" rel="noopener">Repository</a>
-                        </header>
-                        <p>Production-oriented implementation and backtesting utilities for portfolio optimization with Brazilian equities.</p>
-                    </article>
-                    <article class="project-card">
-                        <header class="project-header">
-                            <h3>DMC20</h3>
-                            <a class="project-link" href="https://github.com/vilelabruno/DMC20" target="_blank" rel="noopener">Repository</a>
-                        </header>
-                        <p>Data Mining Cup solution pipeline; documented approach and experiments.</p>
-                    </article>
-                    <article class="project-card">
-                        <header class="project-header">
-                            <h3>HashCode problems</h3>
-                        </header>
-                        <p>Documented solutions with complexity notes and heuristic strategies.</p>
-                        <p>Selected repositories: <a href="https://github.com/vilelabruno/morepizza_hashcode" target="_blank" rel="noopener">morepizza_hashcode</a>, <a href="https://github.com/vilelabruno/hashcodeDataCenterOptimization" target="_blank" rel="noopener">hashcodeDataCenterOptimization</a>, <a href="https://github.com/vilelabruno/adventofcode20" target="_blank" rel="noopener">adventofcode20</a>.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="writing" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="eyebrow">Writing</span>
-                    <h2 class="section-title">Notes on methods and results</h2>
-                </div>
-                <div class="blog-grid">
-                    <article class="blog-card">
-                        <h3><a href="https://medium.com/@vilelabruno/dmc-2022-svd-x-markov-chain-690f789c0ba0" target="_blank" rel="noopener">DMC 2022: SVD x Markov Chain</a></h3>
-                        <p>Shows how combining SVD-based user and category similarity with Markov chains forecast weekly repeat purchases for DataMiningCup 2022, using Bayesian tuning to hit 92% accuracy within hardware limits.</p>
-                    </article>
-                    <article class="blog-card">
-                        <h3><a href="https://medium.com/@vilelabruno/identificando-eventos-extremos-com-teste-de-dk-99af22df8c14" target="_blank" rel="noopener">Identifying Extreme Events with the Dragon-King Test</a></h3>
-                        <p>A practical walkthrough on detecting heavy-tail anomalies; statistical assumptions, implementation notes, operational caveats, and visualization tips.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section section-surface">
-            <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <div class="section-header align-left">
-                            <span class="eyebrow">Contact</span>
-                            <h2 class="section-title">Let's talk</h2>
-                        </div>
-                        <p class="contact-text">Happy to talk about causal inference, bandits, decision systems, or possible collaborations — research or applied. Reach out via the form or connect on LinkedIn.</p>
-                        <div class="social-list">
-                            <a href="https://medium.com/@vilelabruno/" target="_blank" class="fab fa-medium" aria-label="Medium"></a>
-                            <a href="https://web.whatsapp.com/send?phone=5535999556508" target="_blank" class="fab fa-whatsapp" aria-label="WhatsApp"></a>
-                            <a href="https://www.linkedin.com/in/vilelabruno00/" target="_blank" class="fab fa-linkedin" aria-label="LinkedIn"></a>
-                            <a href="https://github.com/vilelabruno" target="_blank" class="fab fa-github" aria-label="GitHub"></a>
-                            <a href="https://www.kaggle.com/brunov1lela" target="_blank" class="fab fa-kaggle" aria-label="Kaggle"></a>
-                        </div>
+                <article class="entry">
+                    <div class="entry-head">
+                        <h3>Two-level residual models for airport taxi-out prediction</h3>
+                        <span class="status">Competition · code</span>
                     </div>
-                    <form method="post" class="contact-form" action="https://forms.un-static.com/forms/cf74ae2aa19a016ecb4df51242bf27c1ec69c742">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input id="name" name="name" placeholder="Please enter your name" type="text" required class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">E-mail address</label>
-                            <input id="email" name="email" placeholder="Your e-mail address" type="email" required class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="6" required class="form-control"></textarea>
-                        </div>
-                        <button name="submit" type="submit" class="btn btn-primary">Send</button>
-                    </form>
+                    <div class="venue">PRC Data Challenge 2026 (EUROCONTROL / OpenSky) · ten European airports</div>
+                    <p>Prediction of departure taxi-out time. Level 1 blends two gradient-boosting bases fitted on the residual against the schedule clock. Level 2 stacks residual layers on top: an ADS-B surface corrector built from open tracks, airport-specific rule and model layers, per-airport ridge/lasso combiners with neural members, a daily posterior update that uses published delay totals as a constraint, and a runway-regime layer.</p>
+                    <div class="entry-links">
+                        <a href="https://github.com/vilelabruno/prc_taxiout_pred" target="_blank" rel="noopener">Code and documentation</a>
+                    </div>
+                </article>
+
+                <article class="entry">
+                    <div class="entry-head">
+                        <h3>Geometry-Aware Flight-Time Prediction from Convective Polygon Intersections</h3>
+                        <span class="status">Manuscript in preparation</span>
+                    </div>
+                    <div class="venue">Bruno Vilela Quirino et al. · from the LATAM/ITA/DECEA challenge (2nd place, 2023)</div>
+                    <p>Treats convective weather as geometry: storm imagery is segmented into georeferenced polygons and spatially joined to radar-derived flight tracks, instead of collapsing weather into airport-level scalars.</p>
+                    <details>
+                        <summary>Method and result</summary>
+                        <ul>
+                            <li>Fuses movement logs, EUROCONTROL CAT-62 radar tracks, METAR/METAF reports and image-derived polygons in one LightGBM pipeline.</li>
+                            <li>286,080 flights, 73 engineered predictors; 5-fold CV RMSE 363 s (473 s held out), roughly halving the error on convective flights against a no-imagery baseline.</li>
+                        </ul>
+                    </details>
+                </article>
+
+                <article class="entry">
+                    <div class="entry-head">
+                        <h3>Repeat-purchase forecasting with SVD and Markov chains</h3>
+                        <span class="status">4th place · write-up</span>
+                    </div>
+                    <div class="venue">Data Mining Cup 2022</div>
+                    <p>SVD-based user and category similarity combined with Markov chains to forecast weekly repeat purchases, with Bayesian hyperparameter tuning to reach 92% accuracy within hardware limits.</p>
+                    <div class="entry-links">
+                        <a href="https://medium.com/@vilelabruno/dmc-2022-svd-x-markov-chain-690f789c0ba0" target="_blank" rel="noopener">Write-up</a>
+                        <a href="https://github.com/vilelabruno/dmc22" target="_blank" rel="noopener">Code</a>
+                    </div>
+                </article>
+
+                <article class="entry">
+                    <div class="entry-head">
+                        <h3>COSMIC: extreme events in magnetic turbulence</h3>
+                        <span class="status">Python package</span>
+                    </div>
+                    <div class="venue">Origin: undergraduate thesis on magnetic reconnection · ESA Cluster mission data</div>
+                    <p>A tested library for turbulence and extreme-value analysis of multi-spacecraft magnetic field data: curlometer current density, PVI and magnetic volatility, spectral diagnostics and structure functions, peaks-over-threshold with declustering.</p>
+                    <div class="entry-links">
+                        <a href="https://github.com/vilelabruno/COSMIC" target="_blank" rel="noopener">Repository</a>
+                    </div>
+                </article>
+            </section>
+
+            <section id="writing">
+                <h2 class="sec-title">Writing</h2>
+                <ul class="posts">
+                    <li>
+                        <a class="t" href="https://medium.com/@vilelabruno/teaching-a-tcn-with-synthetic-worlds-domain-randomization-and-regime-pair-resampling-in-the-adia-98be9a4137ea" target="_blank" rel="noopener">Teaching a TCN with Synthetic Worlds</a><span class="meta">Nov 2026</span>
+                        <p>Domain randomization and regime-pair resampling for structural-break detection, and why the same synthetic data lifted a neural detector and hurt CatBoost.</p>
+                    </li>
+                    <li>
+                        <a class="t" href="https://medium.com/@vilelabruno/dmc-2022-svd-x-markov-chain-690f789c0ba0" target="_blank" rel="noopener">DMC 2022: SVD x Markov Chain</a><span class="meta">Sep 2023</span>
+                        <p>A walkthrough of the repeat-purchase solution.</p>
+                    </li>
+                    <li>
+                        <a class="t" href="https://medium.com/@vilelabruno/identificando-eventos-extremos-com-teste-de-dk-99af22df8c14" target="_blank" rel="noopener">Identificando eventos extremos com teste de DK</a><span class="meta">Jul 2022 · PT</span>
+                        <p>Detecting heavy-tail anomalies with the Dragon-King test: assumptions, implementation and caveats.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="code">
+                <h2 class="sec-title">Code</h2>
+                <ul class="plain">
+                    <li><span class="y">2026</span><a href="https://github.com/vilelabruno/prc_taxiout_pred" target="_blank" rel="noopener">prc_taxiout_pred</a> · PRC 2026 taxi-out pipeline: bases, residual layers, stack</li>
+                    <li><span class="y">2025</span><a href="https://github.com/vilelabruno/COSMIC" target="_blank" rel="noopener">COSMIC</a> · magnetic turbulence and extreme-event analysis</li>
+                    <li><span class="y">2022</span><a href="https://github.com/vilelabruno/dmc22" target="_blank" rel="noopener">dmc22</a> · Data Mining Cup 2022 solution</li>
+                    <li><span class="y">2020</span><a href="https://github.com/vilelabruno/MarkowitzPortfolioOPT" target="_blank" rel="noopener">MarkowitzPortfolioOPT</a> · mean-variance optimization and backtests on Brazilian equities</li>
+                    <li><span class="y">2020</span><a href="https://github.com/vilelabruno/morepizza_hashcode" target="_blank" rel="noopener">Hash Code</a> and <a href="https://github.com/vilelabruno/adventofcode20" target="_blank" rel="noopener">Advent of Code</a> · combinatorial optimization and heuristics</li>
+                </ul>
+            </section>
+
+            <section id="competitions">
+                <h2 class="sec-title">Competitions</h2>
+                <ul class="plain">
+                    <li><span class="y">2026</span>PRC Data Challenge (taxi-out) · ADIA Lab Structural Break</li>
+                    <li><span class="y">2023</span>LATAM/ITA/DECEA Data Science Challenge · 2nd place</li>
+                    <li><span class="y">2022</span><a href="https://medium.com/@vilelabruno/dmc-2022-svd-x-markov-chain-690f789c0ba0" target="_blank" rel="noopener">Data Mining Cup</a> · 4th place</li>
+                    <li><span class="y">2018</span><a href="https://www.unifal-mg.edu.br/portal/2018/11/20/estudantes-de-ciencia-da-computacao-da-unifal-mg-conquistam-4o-lugar-na-copa-do-mundo-de-ciencia-de-dados-e-quebram-hegemonia-europeia-na-competicao/" target="_blank" rel="noopener">Data Science Game</a> · 4th place · <a href="https://www.kaggle.com/c/kddbr-2018/leaderboard" target="_blank" rel="noopener">KDD-BR</a></li>
+                </ul>
+            </section>
+
+            <section id="experience">
+                <h2 class="sec-title">Industry experience</h2>
+                <div class="xp">
+                    <div class="when">current</div>
+                    <div><strong>LATAM Airlines</strong> <span class="sub">· Staff Data Scientist</span><br>Next-best-offer and personalization platform on GCP Vertex AI; uplift modeling, contextual-bandit services and recommendation engines; architecture and MLOps standards.</div>
                 </div>
-            </div>
-        </section>
+                <div class="xp">
+                    <div class="when">earlier</div>
+                    <div><strong>Kumulus</strong> <span class="sub">· Senior Data Scientist</span><br>RAG pipelines and GenAI assistants; bandits and RL to guide conversation flows; Databricks/Spark ETLs on Azure and AWS.</div>
+                </div>
+                <div class="xp">
+                    <div class="when">earlier</div>
+                    <div><strong>Plusoft</strong> and <strong>Vertem</strong> <span class="sub">· Data Scientist</span><br>Customer segmentation (LTV, churn), geomarketing and time series; anti-fraud risk modeling with MLOps on Azure.</div>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2 class="sec-title">Contact</h2>
+                <p>I am happy to talk about causal inference, decision systems, quantitative finance, or research collaborations. Write below or reach me on <a href="https://www.linkedin.com/in/vilelabruno00/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+                <form method="post" class="contact-form" action="https://forms.un-static.com/forms/cf74ae2aa19a016ecb4df51242bf27c1ec69c742">
+                    <div><label for="name">Name</label><input id="name" name="name" type="text" required></div>
+                    <div><label for="email">E-mail</label><input id="email" name="email" type="email" required></div>
+                    <div><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea></div>
+                    <button name="submit" type="submit">Send</button>
+                </form>
+            </section>
+        </div>
     </main>
 
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <p>&copy; Bruno Vilela, 2026.</p>
-        </div>
+    <footer>
+        <div class="wrap">&copy; Bruno Vilela Quirino, 2026. Views are my own.</div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="assets/js/qlearning.js" defer></script>
     <script>
         document.getElementById('themeToggle').addEventListener('click', function () {
             var root = document.documentElement;
             var meta = document.getElementById('themeColorMeta');
-            var isDark = root.getAttribute('data-theme') === 'dark';
-            if (isDark) {
+            var dark = root.getAttribute('data-theme') === 'dark';
+            if (dark) {
                 root.removeAttribute('data-theme');
-                if (meta) meta.setAttribute('content', '#ffffff');
-                try { localStorage.setItem('theme', 'light'); } catch (e) {}
+                meta.setAttribute('content', '#fbfbf9');
             } else {
                 root.setAttribute('data-theme', 'dark');
-                if (meta) meta.setAttribute('content', '#08090c');
-                try { localStorage.setItem('theme', 'dark'); } catch (e) {}
+                meta.setAttribute('content', '#0f1115');
             }
+            try { localStorage.setItem('theme', dark ? 'light' : 'dark'); } catch (e) {}
         });
-
-        (function () {
-            var nav = document.getElementById('mainNav');
-            var closePending = false;
-            document.querySelectorAll('#mainNav .nav-link').forEach(function (link) {
-                link.addEventListener('click', function () {
-                    nav.classList.remove('show');
-                    closePending = true;
-                });
-            });
-            // Bootstrap's own opening transition can finish after the link
-            // click and re-add "show"; close again once it settles.
-            if (window.jQuery) {
-                window.jQuery(nav).on('shown.bs.collapse', function () {
-                    if (closePending) nav.classList.remove('show');
-                });
-            }
-        })();
     </script>
 </body>
 
